@@ -25,5 +25,5 @@ ln -sf $SRC/bashrc $HOME/.bashrc
 ln -sf $SRC/bash_profile $HOME/.bash_profile
 ln -sf $SRC/gemrc $HOME/.gemrc
 ln -sf $SRC/aliases $HOME/.aliases
-ln -sf $SRC/vimrc $HOME/.config/nvim/init.vim
+ln -sf $SRC/init.vim $HOME/.config/nvim/init.vim
 ln -sf $SRC/alacritty.yml $HOME/.config/alacritty/alacritty.yml

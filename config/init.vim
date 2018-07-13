@@ -9,7 +9,7 @@ set hidden                    " Allow unwritten buffers
 "-----------------------------------------------------------------------------
 " VUNDLE PLUGIN MANAGEMENT
 "-----------------------------------------------------------------------------
-call plug#begin()                  " Initialize vundle
+call plug#begin()                  " Initialize vim-plug
 Plug 'VundleVim/Vundle.vim'        " Let Vundle manage Vundle
 Plug 'ctrlpvim/ctrlp.vim'          " Quick file navigation
 Plug 'tpope/vim-commentary'        " Quickly comment lines out and in
@@ -23,8 +23,9 @@ Plug 'ervandew/supertab'           " Perform all completions with Tab
 Plug 'scrooloose/nerdtree'         " Directory tree explorer
 Plug 'gaving/vim-textobj-argument' " Function arguments as text objects
 Plug 'vim-airline/vim-airline'     " Status line improvements
-Plug 'regreplop.vim'               " Replace with a specified register
-call plug#end()                    " Complete vunde initialization
+Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
+Plug 'jonathanfilip/vim-lucius'
+call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
 filetype plugin indent on
@@ -108,8 +109,9 @@ set ruler               " show lines in lower right
 set nowrap              " don't wrap lines eva!
 
 colorscheme lucius      " color scheme
+LuciusDark              " activate dark mode
+
 set cursorline          " highlight current line
-set highlight=sbr       " invert and bold status line
 let loaded_matchparen = 1
 
 set t_Co=256            " set 256 color

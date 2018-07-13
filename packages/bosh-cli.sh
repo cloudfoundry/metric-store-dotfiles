@@ -1,7 +1,13 @@
 #!/bin/bash
 
 VERSION=3.0.1
+FILE=bosh-cli-$VERSION-linux-amd64
 
-wget https://github.com/cloudfoundry/bosh-bootloader/releases/download/v$VERSION/bbl-v$VERSION\_linux_x86-64
-sudo mv bbl-v$VERSION\_linux_x86-64 /usr/local/bin/bbl
-sudo chmod +x /usr/local/bin/bbl
+if [[ `bosh --version` = "version $VERSION-"* ]]; then
+    echo "Looks like bosh-cli $VERSION is already installed, skipping..."
+    exit
+fi
+
+wget https://s3.amazonaws.com/bosh-cli-artifacts/$FILE
+chmod +x $FILE
+sudo mv $FILE /usr/local/bin/bosh
