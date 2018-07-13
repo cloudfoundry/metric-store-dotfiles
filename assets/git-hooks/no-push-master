@@ -1,0 +1,9 @@
+protected_branch='master'
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+
+if [ $current_branch = $protected_branch ]; then
+	echo 'Avoid pushing to master in this repository!  (pre-push hook.)'
+  exit 1
+fi
+
+exit 0

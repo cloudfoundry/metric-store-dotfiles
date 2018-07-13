@@ -1,0 +1,21 @@
+#!/bin/bash
+
+DIR=$(dirname $0)
+TARGET=$HOME/workspace
+REPOS=`cat $DIR/assets/repo-list`
+
+ssh -o StrictHostKeyChecking=false -T git@github.com;
+SSH_STATUS=$?;
+
+if [[ $SSH_STATUS != 1 ]]; then
+    echo "Please check that you have correctly loaded your GitHub SSH key";
+    return $SSH_STATUS;
+fi;
+
+mkdir -p $TARGET;
+
+for r in $REPOS
+do
+  REPO=${r#*/}
+  test -d $TARGET/$REPO || git clone --recursive --shallow-submodules git@github.com:$r.git $TARGET/$REPO
+done;

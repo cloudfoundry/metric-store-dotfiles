@@ -1,0 +1,57 @@
+#!/bin/bash
+if [ $(uname -s) == 'Darwin' ]; then
+  alias ls="ls -G"
+else
+  alias ls="ls --color=auto"
+fi
+
+# system
+alias ll="ls -la"
+alias grep='grep --color=auto'
+alias nocaps='/usr/bin/setxkbmap -layout us -option ctrl:nocaps'
+alias blc='bosh -e lite -d cf'
+alias check-repos="~/workspace/loggregator-dotfiles/check-repos.sh"
+
+# projects
+alias loggr='cd ~/workspace/loggregator-release'
+alias gologgr='cd ~/workspace/go/src/code.cloudfoundry.org/go-loggregator'
+alias src='cd ~/workspace/loggregator-release/src/code.cloudfoundry.org/loggregator'
+alias glc="cd ~/workspace/go/src/code.cloudfoundry.org/go-log-cache"
+alias ss="cd ~/workspace/cf-syslog-drain-release/src/code.cloudfoundry.org/scalable-syslog"
+alias ssr="cd ~/workspace/cf-syslog-drain-release/"
+alias sdr="cd ~/workspace/cf-syslog-drain-release/"
+alias tools="cd ~/workspace/go/src/code.cloudfoundry.org/loggregator-tools"
+alias dotfiles="cd ~/workspace/loggregator-dotfiles"
+alias bench="cd ~/workspace/loggregator-bench-release"
+alias refnozr="cd ~/workspace/reference-nozzle-release"
+alias refnoz="cd ~/workspace/reference-nozzle-release/src/code.cloudfoundry.org/refnozzle"
+alias nnn="cd ~/workspace/noisy-neighbor-nozzle-release/src/code.cloudfoundry.org/noisy-neighbor-nozzle"
+alias nnnr="cd ~/workspace/noisy-neighbor-nozzle-release"
+alias lcr="cd ~/workspace/log-cache-release"
+alias lcs="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache"
+alias lcli="cd ~/workspace/go/src/code.cloudfoundry.org/log-cache-cli"
+alias latsr="cd ~/workspace/logging-acceptance-tests-release"
+alias lats="cd ~/workspace/logging-acceptance-tests-release/src/code.cloudfoundry.org/logging-acceptance-tests"
+alias draincli="cd ~/workspace/go/src/code.cloudfoundry.org/cf-drain-cli"
+alias lar="cd ~/workspace/go/src/github.com/cloudfoundry/loggregator-agent-release"
+alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release"
+alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/code.cloudfoundry.org/log-cache-acceptance-tests"
+
+# repos
+alias depl='cd ~/workspace/deployments-loggregator'
+alias ci='cd ~/workspace/loggregator-ci'
+alias cfd='cd ~/workspace/cf-deployment'
+alias play='cd ~/workspace/deployments-loggregator/gcp/playground'
+alias coconut='cd ~/workspace/deployments-loggregator/gcp/coconut-bbl'
+alias one='cd ~/workspace/deployments-loggregator/gcp/ci-pool/one'
+alias two='cd ~/workspace/deployments-loggregator/gcp/ci-pool/two'
+alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests"
+alias locks="cd /home/pivotal/workspace/loggregator-locks"
+
+alias pbc='tmux show-buffer | DISPLAY=:0 xsel -b'
+
+# quick logins
+alias login='./cf_login'
+alias PWS='cf login -a api.run.pivotal.io -u cf-lamb@pivotallabs.com'
+alias cf-manifest='bosh -d cf manifest > manifest.yml && vim manifest.yml'
+alias cf-deploy='bosh -d cf deploy manifest.yml'

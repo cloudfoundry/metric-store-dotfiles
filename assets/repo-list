@@ -1,0 +1,8 @@
+cloudfoundry/loggregator-release
+cloudfoundry-incubator/loggregator-tools
+cloudfoundry/log-cache-release
+cloudfoundry/loggregator-dotfiles
+cloudfoundry/loggregator-ci
+cloudfoundry/deployments-loggregator
+cloudfoundry/go-log-cache
+cloudfoundry/go-loggregator
