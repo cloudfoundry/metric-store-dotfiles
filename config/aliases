@@ -7,6 +7,7 @@ fi
 
 # system
 alias ll="ls -la"
+alias lal="ls -lA"
 alias grep='grep --color=auto'
 alias nocaps='/usr/bin/setxkbmap -layout us -option ctrl:nocaps'
 alias blc='bosh -e lite -d cf'
