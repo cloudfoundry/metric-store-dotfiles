@@ -1,14 +1,15 @@
 #!/bin/bash
 
-popd ~/workspace
-  git clone https://github.com/google/protobuf.git
-  popd protobuf
-    git submodule update --init --recursive
-    ./autogen.sh
-    ./configure
-    make
-    make check
-    sudo make install
-    sudo ldconfig
-  pushd
-pushd
+VERSION=3.6.0
+FILE=protoc-$VERSION-linux-x86_64.zip
+
+pushd $HOME/workspace
+  mkdir protobuf
+  pushd protobuf
+    wget https://github.com/google/protobuf/releases/download/v$VERSION/$FILE
+    unzip $FILE
+    sudo mv -f bin/* /usr/local/bin/
+    sudo cp -R include/* /usr/local/include/
+  popd
+  rm -rf protobuf
+popd
