@@ -14,3 +14,5 @@ pushd ruby-install-$VERSION/
 popd
 rm ruby-install-$VERSION.tar.gz
 rm -rf ruby-install-$VERSION
+
+ruby-install

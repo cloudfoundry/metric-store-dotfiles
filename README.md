@@ -12,7 +12,7 @@ distros:
 ## Prerequisites
 
 You'll want to make sure you have an SSH key added that has access to all of
-the team repos.
+the team repos (located in `assets/repo-list`).
 
 ## Installation
 
@@ -22,9 +22,6 @@ To link the dotfiles and install system-level packages, just run:
 ./install.sh
 ```
 
-Once that's complete, you can run the following to clone all of the team
-packages into `~/workspace`:
+## Contributing
 
-```
-./clone-repos.sh
-```
+Want to make changes or add new packages? Just push up a branch and open a PR.

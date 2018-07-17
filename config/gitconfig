@@ -25,3 +25,11 @@
 [user]
 	email = tpersen@pivotal.io
 	name = Todd Persen
+[duet "env"]
+	git-author-initials = todd
+	git-author-name = Todd Persen
+	git-author-email = tpersen@pivotal.io
+	mtime = 1531868156
+	git-committer-initials = 
+	git-committer-name = 
+	git-committer-email = 

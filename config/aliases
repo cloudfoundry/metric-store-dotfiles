@@ -12,6 +12,10 @@ alias grep='grep --color=auto'
 alias nocaps='/usr/bin/setxkbmap -layout us -option ctrl:nocaps'
 alias blc='bosh -e lite -d cf'
 alias check-repos="~/workspace/loggregator-dotfiles/check-repos.sh"
+alias python='python3'
+alias pip='pip3'
+alias flyl='fly -t loggregator'
+alias flylc='fly -t log-cache'
 
 # projects
 alias loggr='cd ~/workspace/loggregator-release'
