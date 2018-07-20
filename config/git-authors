@@ -1,13 +1,9 @@
 authors:
-  jk: Jason Keene; jkeene
-  ap: Andrew Poydence; apoydence
-  js: Johanna Smith; josmith
-  bl: Brady Love; blove
-  tp: Travis Patterson; tpatterson
+  tp: Todd Persen; tpersen
   todd: Todd Persen; tpersen
-  ps: Peter Stone; pstone
-  ma: Mark Alston; malston
+  tood: Todd Persen; tpersen
   hw: Hunter Williams; huwilliams
+  hdub: Hunter Williams; huwilliams
 email:
   domain: pivotal.io
 
