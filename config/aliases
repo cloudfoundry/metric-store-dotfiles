@@ -46,10 +46,8 @@ alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/code.cloudfou
 alias depl='cd ~/workspace/deployments-loggregator'
 alias ci='cd ~/workspace/loggregator-ci'
 alias cfd='cd ~/workspace/cf-deployment'
-alias play='cd ~/workspace/deployments-loggregator/gcp/playground'
 alias coconut='cd ~/workspace/deployments-loggregator/gcp/coconut-bbl'
-alias one='cd ~/workspace/deployments-loggregator/gcp/ci-pool/one'
-alias two='cd ~/workspace/deployments-loggregator/gcp/ci-pool/two'
+alias lime='cd ~/workspace/deployments-loggregator/gcp/lime'
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests"
 alias locks="cd /home/pivotal/workspace/loggregator-locks"
 
