@@ -6,11 +6,17 @@ sudo apt update
 sudo apt install -y automake build-essential pkg-config cmake net-tools
 sudo apt install -y neovim tmux git curl htop silversearcher-ag openssh-server
 sudo apt install -y python3 python3-pip jq
+sudo apt install -y libxml2 libxml2-dev libcurl4-gnutls-dev
 sudo apt install -y fonts-inconsolata
+
+# these are required for lastpass-cli
+sudo apt install -y libcurl4 libcurl4-openssl-dev libssl-dev
+sudo apt install -y libxml2 libxml2-dev libssl1.1 ca-certificates xclip
+
 
 sudo fc-cache -fv
 
-./clone-repos.sh
+# ./clone-repos.sh
 
 PACKAGES=`ls -d packages/*.sh`
 for package in $PACKAGES
@@ -18,8 +24,6 @@ do
   echo "Running $package"
   $package
 done;
-
-./post-install.sh
 
 SRC=$HOME/workspace/log-cache-dotfiles/config
 
@@ -36,3 +40,11 @@ ln -sf $SRC/aliases $HOME/.aliases
 ln -sf $SRC/init.vim $HOME/.config/nvim/init.vim
 ln -sf $SRC/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 ln -sf $SRC/ruby-version $HOME/.ruby-version
+
+source $HOME/.profile
+source $HOME/.bash_profile
+source $HOME/.bashrc
+source $HOME/.aliases
+
+./post-install.sh
+
