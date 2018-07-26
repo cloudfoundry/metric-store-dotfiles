@@ -24,7 +24,8 @@ Plug 'scrooloose/nerdtree'         " Directory tree explorer
 Plug 'gaving/vim-textobj-argument' " Function arguments as text objects
 Plug 'vim-airline/vim-airline'     " Status line improvements
 Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
-Plug 'jonathanfilip/vim-lucius'
+"Plug 'jonathanfilip/vim-lucius'
+Plug 'zchee/hybrid.nvim'
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
@@ -108,8 +109,7 @@ set number              " show line numbers
 set ruler               " show lines in lower right
 set nowrap              " don't wrap lines eva!
 
-colorscheme lucius      " color scheme
-LuciusDark              " activate dark mode
+colorscheme hybrid      " color scheme
 
 set cursorline          " highlight current line
 let loaded_matchparen = 1
