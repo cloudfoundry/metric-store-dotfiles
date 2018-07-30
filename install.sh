@@ -5,14 +5,13 @@ set -ex
 sudo apt update
 sudo apt install -y automake build-essential pkg-config cmake net-tools
 sudo apt install -y neovim tmux git curl htop silversearcher-ag openssh-server
-sudo apt install -y python3 python3-pip jq
+sudo apt install -y python3 python3-pip jq zsh
 sudo apt install -y libxml2 libxml2-dev libcurl4-gnutls-dev
 sudo apt install -y fonts-inconsolata
 
 # these are required for lastpass-cli
-sudo apt install -y libcurl4 libcurl4-openssl-dev libssl-dev
-sudo apt install -y libxml2 libxml2-dev libssl1.1 ca-certificates xclip
-
+# sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
+sudo apt install -y libcurl3 libcurl3-openssl-dev libssl1.0 libssl1.0-dev
 
 sudo fc-cache -fv
 
