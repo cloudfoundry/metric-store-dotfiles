@@ -11,7 +11,7 @@ sudo apt install -y fonts-inconsolata
 
 # these are required for lastpass-cli
 # sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
-sudo apt install -y libcurl3 libcurl3-openssl-dev libssl1.0 libssl1.0-dev
+sudo apt install -y libcurl3 libcurl3-openssl-dev libssl1.0 libssl-dev
 
 sudo fc-cache -fv
 
