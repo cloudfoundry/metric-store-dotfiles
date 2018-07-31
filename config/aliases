@@ -33,7 +33,7 @@ alias refnoz="cd ~/workspace/reference-nozzle-release/src/code.cloudfoundry.org/
 alias nnn="cd ~/workspace/noisy-neighbor-nozzle-release/src/code.cloudfoundry.org/noisy-neighbor-nozzle"
 alias nnnr="cd ~/workspace/noisy-neighbor-nozzle-release"
 alias lcr="cd ~/workspace/log-cache-release"
-alias lcs="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache"
+alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache"
 alias lcli="cd ~/workspace/go/src/code.cloudfoundry.org/log-cache-cli"
 alias latsr="cd ~/workspace/logging-acceptance-tests-release"
 alias lats="cd ~/workspace/logging-acceptance-tests-release/src/code.cloudfoundry.org/logging-acceptance-tests"
@@ -41,6 +41,8 @@ alias draincli="cd ~/workspace/go/src/code.cloudfoundry.org/cf-drain-cli"
 alias lar="cd ~/workspace/go/src/github.com/cloudfoundry/loggregator-agent-release"
 alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release"
 alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/code.cloudfoundry.org/log-cache-acceptance-tests"
+alias lci="cd ~/workspace/log-cache-ci"
+alias lcd="cd ~/workspace/log-cache-deployments"
 
 # repos
 alias depl='cd ~/workspace/deployments-loggregator'
