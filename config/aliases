@@ -34,6 +34,7 @@ alias nnn="cd ~/workspace/noisy-neighbor-nozzle-release/src/code.cloudfoundry.or
 alias nnnr="cd ~/workspace/noisy-neighbor-nozzle-release"
 alias lcr="cd ~/workspace/log-cache-release"
 alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache"
+alias lcd="cd ~/workspace/log-cache-deployments"
 alias lcli="cd ~/workspace/go/src/code.cloudfoundry.org/log-cache-cli"
 alias latsr="cd ~/workspace/logging-acceptance-tests-release"
 alias lats="cd ~/workspace/logging-acceptance-tests-release/src/code.cloudfoundry.org/logging-acceptance-tests"
