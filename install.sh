@@ -10,8 +10,7 @@ sudo apt install -y libxml2 libxml2-dev libcurl4-gnutls-dev
 sudo apt install -y fonts-inconsolata
 
 # these are required for lastpass-cli
-# sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
-sudo apt install -y libcurl3 libcurl3-openssl-dev libssl1.0 libssl-dev
+sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
 
 sudo fc-cache -fv
 
@@ -27,6 +26,8 @@ done;
 SRC=$HOME/workspace/log-cache-dotfiles/config
 
 mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.config/alacritty
+
 
 ln -sf $SRC/git-authors $HOME/.git-authors
 ln -sf $SRC/gitconfig $HOME/.gitconfig
