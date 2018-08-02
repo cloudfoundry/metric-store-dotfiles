@@ -10,7 +10,6 @@ set hidden                    " Allow unwritten buffers
 " VUNDLE PLUGIN MANAGEMENT
 "-----------------------------------------------------------------------------
 call plug#begin()                  " Initialize vim-plug
-Plug 'VundleVim/Vundle.vim'        " Let Vundle manage Vundle
 Plug 'ctrlpvim/ctrlp.vim'          " Quick file navigation
 Plug 'tpope/vim-commentary'        " Quickly comment lines out and in
 Plug 'tpope/vim-fugitive'          " Help formatting commit messages

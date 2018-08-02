@@ -14,7 +14,11 @@ sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
 
 sudo fc-cache -fv
 
-# ./clone-repos.sh
+packages/rust.sh
+source $HOME/.cargo/env
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 PACKAGES=`ls -d packages/*.sh`
 for package in $PACKAGES
@@ -27,7 +31,6 @@ SRC=$HOME/workspace/log-cache-dotfiles/config
 
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/alacritty
-
 
 ln -sf $SRC/git-authors $HOME/.git-authors
 ln -sf $SRC/gitconfig $HOME/.gitconfig
@@ -48,3 +51,4 @@ source $HOME/.aliases
 
 ./post-install.sh
 
+nvim +PlugInstall +qall
