@@ -20,6 +20,13 @@ source $HOME/.cargo/env
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Install patched fonts for powerline
+git clone https://github.com/powerline/fonts.git --depth=1
+pushd fonts
+  ./install.sh
+popd
+rm -rf fonts
+
 PACKAGES=`ls -d packages/*.sh`
 for package in $PACKAGES
 do
