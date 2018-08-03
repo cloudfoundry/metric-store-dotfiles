@@ -9,7 +9,6 @@ cloudfoundry/go-log-cache
 cloudfoundry/log-cache-cli
 cloudfoundry-incubator/log-cache-tools
 cloudfoundry/loggregator-release
-cloudfoundry/loggregator-ci
 cloudfoundry/deployments-loggregator
 cloudfoundry/go-loggregator
 cloudfoundry-incubator/loggregator-tools

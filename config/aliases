@@ -14,8 +14,7 @@ alias blc='bosh -e lite -d cf'
 alias check-repos="~/workspace/loggregator-dotfiles/check-repos.sh"
 alias python='python3'
 alias pip='pip3'
-alias flyl='fly -t loggregator'
-alias flylc='fly -t log-cache'
+alias flyl='fly -t log-cache'
 
 # projects
 alias src='cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache'
