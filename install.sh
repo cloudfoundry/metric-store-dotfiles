@@ -34,6 +34,8 @@ do
   $package
 done;
 
+fly -t log-cache login -c https://log-cache.ci.cf-app.com
+
 SRC=$HOME/workspace/log-cache-dotfiles/config
 
 mkdir -p $HOME/.config/nvim
