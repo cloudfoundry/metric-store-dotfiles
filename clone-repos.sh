@@ -17,5 +17,5 @@ mkdir -p $TARGET;
 for r in $REPOS
 do
   REPO=${r#*/}
-  test -d $TARGET/$REPO || git clone --recursive --shallow-submodules git@github.com:$r.git $TARGET/$REPO
+  test -d $TARGET/$REPO || git clone --recursive git@github.com:$r.git $TARGET/$REPO
 done;
