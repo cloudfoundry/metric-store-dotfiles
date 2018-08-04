@@ -60,4 +60,4 @@ source $HOME/.aliases
 
 ./post-install.sh
 
-nvim +PlugInstall +qall
+nvim +PlugInstall +GoInstallBinaries +qall
