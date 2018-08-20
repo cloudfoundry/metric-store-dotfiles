@@ -12,7 +12,6 @@
   fix-remote = ! "f() { export remote=$(git remote get-url origin --push); if [ -z ${remote##https://github.com/*} ]; then git remote set-url origin --push \"git@github.com:${remote#https://github.com/}\"; fi; unset remote; }; f"
   fixup="commit --fixup"
   flog="log --pretty=fuller --decorate"
-  gpr="git pull --rebase"
   llog="log --date=local"
   lol="log --graph --decorate --oneline"
   lola="log --graph --decorate --oneline --all"

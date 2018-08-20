@@ -2,6 +2,9 @@
 
 alias ls="ls --color=auto"
 
+# git
+alias gpr="git pull --rebase"
+
 # system
 alias ll="ls -la"
 alias lal="ls -lA"
