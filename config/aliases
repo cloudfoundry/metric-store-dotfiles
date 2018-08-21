@@ -4,6 +4,7 @@ alias ls="ls --color=auto"
 
 # git
 alias gpr="git pull --rebase"
+alias gpp="git pull --rebase && git push"
 
 # system
 alias ll="ls -la"
