@@ -25,6 +25,7 @@ Plug 'vim-airline/vim-airline'     " Status line improvements
 Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
 "Plug 'jonathanfilip/vim-lucius'
 Plug 'zchee/hybrid.nvim'
+Plug 'rking/ag.vim'
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
@@ -42,7 +43,6 @@ set updatetime=100 " updates :GoInfo faster
 " vim-go command shortcuts
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t :wa<CR>:!clear;go test -v ./%:h<CR>
-autocmd FileType go nmap <leader>a <Plug>(go-alternate-edit)
 autocmd FileType go nmap <leader>d :GoDeclsDir<CR>
 autocmd FileType go nmap <leader>g <Plug>(go-generate)
 autocmd FileType go nmap <leader>? :GoDoc<CR>
@@ -100,6 +100,41 @@ let g:ctrlp_working_path_mode = ''
 " nerd tree config
 "-----------------------------------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
+
+"-----------------------------------------------------------------------------
+" Search
+"-----------------------------------------------------------------------------
+if executable('rg')
+  " Use Ripgrep over Grep
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+  let g:ctrlp_user_command = 'rg --hidden -i --files %s'
+  let g:ackprg = 'rg --vimgrep'
+elseif executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ".git" --ignore ".DS_Store" --hidden -g ""'
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+function! AgGrep()
+  let command = g:ackprg.' -i '.expand('<cword>')
+  cexpr system(command)
+  cw
+endfunction
+
+function! AgVisual()
+  normal gv"xy
+  let command = g:ackprg.' -i '.@x
+  cexpr system(command)
+  cw
+endfunction
+
+map <leader>a :call AgGrep()<CR>
+vmap <leader>a :call AgVisual()<CR>
+
 "------------------------------------------------------------------------------
 " APPEARANCE
 "------------------------------------------------------------------------------
