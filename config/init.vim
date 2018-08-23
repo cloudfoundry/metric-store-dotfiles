@@ -107,6 +107,8 @@ noremap <leader>b :CtrlPBuffer<CR>
 " nerd tree config
 "-----------------------------------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
+map \ :NERDTreeToggle<CR>
+map \| :NERDTreeFind<CR>
 
 "-----------------------------------------------------------------------------
 " Search
