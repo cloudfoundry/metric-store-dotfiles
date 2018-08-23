@@ -59,8 +59,6 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-
 function! s:toggle_coverage()
     call go#coverage#BufferToggle(!g:go_jump_to_error)
     highlight ColorColumn ctermbg=235
@@ -95,6 +93,9 @@ let g:ctrlp_custom_ignore = {
   \ }
 " stop setting git repo as root path
 let g:ctrlp_working_path_mode = ''
+
+nnoremap <silent> <leader>f :CtrlP<CR>
+noremap <leader>b :CtrlPBuffer<CR>
 
 "-----------------------------------------------------------------------------
 " nerd tree config
