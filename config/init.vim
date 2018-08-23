@@ -220,6 +220,9 @@ nmap <silent> <leader>ee :source $MYVIMRC<cr>
 " clear the search buffer when hitting space
 nnoremap <space> :nohlsearch<cr>
 
+:noremap <leader>v :vsp<CR>
+:noremap <leader>h :split<CR>
+
 " reselect when indenting
 vnoremap < <gv
 vnoremap > >gv
