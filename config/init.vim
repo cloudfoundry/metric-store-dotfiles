@@ -84,6 +84,12 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 
 "-----------------------------------------------------------------------------
+" General Coding
+"-----------------------------------------------------------------------------
+xmap <leader>/ <Plug>Commentary
+nmap <leader>/ <Plug>CommentaryLine
+
+"----------------------------------------------------------------------------
 " CTRL-P CONFIG
 "-----------------------------------------------------------------------------
 let g:ctrlp_show_hidden = 1
@@ -158,7 +164,6 @@ set list                " enable display of invisible characters
 " invisible character colors
 highlight NonText ctermfg=239
 highlight SpecialKey ctermfg=239
-
 
 "------------------------------------------------------------------------------
 " supertab config
