@@ -1,7 +1,5 @@
 #!/bin/bash
 
-alias ls="ls --color=auto"
-
 # git
 alias gpr="git pull --rebase"
 alias gpp="git pull --rebase && git push"
@@ -12,10 +10,13 @@ alias lal="ls -lA"
 alias grep='grep --color=auto'
 alias nocaps='/usr/bin/setxkbmap -layout us -option ctrl:nocaps'
 alias blc='bosh -e lite -d cf'
-alias check-repos="~/workspace/loggregator-dotfiles/check-repos.sh"
 alias python='python3'
 alias pip='pip3'
 alias flyl='fly -t log-cache'
+
+# environments
+alias lime='cd ~/workspace/log-cache-deployments/gcp/lime'
+alias citron='cd ~/workspace/log-cache-deployments/gcp/citron'
 
 # projects
 alias src='cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache'
@@ -25,23 +26,15 @@ alias dotfiles="cd ~/workspace/log-cache-dotfiles"
 alias lcr="cd ~/workspace/log-cache-release"
 alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache"
 alias lcd="cd ~/workspace/log-cache-deployments"
+alias ci="cd ~/workspace/log-cache-ci"
 alias lci="cd ~/workspace/log-cache-ci"
 alias lcli="cd ~/workspace/go/src/code.cloudfoundry.org/log-cache-cli"
 alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release"
 alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/code.cloudfoundry.org/log-cache-acceptance-tests"
 alias lct="cd ~/workspace/go/src/github.com/cloudfoundry-incubator/log-cache-tools"
-
-# repos
 alias cfd='cd ~/workspace/cf-deployment'
-alias coconut='cd ~/workspace/deployments-loggregator/gcp/coconut-bbl'
-alias lime='cd ~/workspace/deployments-loggregator/gcp/lime'
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests"
-alias locks="cd /home/pivotal/workspace/loggregator-locks"
-
-alias pbc='tmux show-buffer | DISPLAY=:0 xsel -b'
 
 # quick logins
 alias login='./cf_login'
 alias PWS='cf login -a api.run.pivotal.io -u cf-lamb@pivotallabs.com'
-alias cf-manifest='bosh -d cf manifest > manifest.yml && vim manifest.yml'
-alias cf-deploy='bosh -d cf deploy manifest.yml'
