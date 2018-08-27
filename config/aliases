@@ -3,6 +3,7 @@
 # git
 alias gpr="git pull --rebase"
 alias gpp="git pull --rebase && git push"
+alias gs="git status"
 
 # system
 alias ll="ls -la"

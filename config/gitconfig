@@ -1,5 +1,7 @@
+[rebase]
+  autostash=true
 [push]
-	default = simple
+  default = simple
 [alias]
   blog="log origin/master... --left-right"
   br=branch
