@@ -61,3 +61,6 @@ source $HOME/.aliases
 ./post-install.sh
 
 nvim +PlugInstall +GoInstallBinaries +qall
+
+# set caps lock to function as ctrl
+setxkbmap -layout us -option ctrl:nocaps
