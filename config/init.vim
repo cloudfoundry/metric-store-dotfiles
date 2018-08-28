@@ -42,7 +42,7 @@ set updatetime=100 " updates :GoInfo faster
 
 " vim-go command shortcuts
 autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>t :wa<CR>:!clear;go test -v ./%:h<CR>
+autocmd FileType go nmap <leader>t :wa<CR>:!clear;go test -v ./%:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
 autocmd FileType go nmap <leader>d :GoDeclsDir<CR>
 autocmd FileType go nmap <leader>g <Plug>(go-generate)
 autocmd FileType go nmap <leader>? :GoDoc<CR>
