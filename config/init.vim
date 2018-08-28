@@ -222,6 +222,11 @@ nmap <silent> <leader>ee :source $MYVIMRC<cr>
 " clear the search buffer when hitting space
 nnoremap <space> :nohlsearch<cr>
 
+" sometimes I hold the shift too long ... just allow it
+cabbrev W w
+cabbrev Q q
+cabbrev Tabe tabe
+
 :noremap <leader>v :vsp<CR>
 :noremap <leader>h :split<CR>
 
