@@ -23,9 +23,9 @@ Plug 'scrooloose/nerdtree'         " Directory tree explorer
 Plug 'gaving/vim-textobj-argument' " Function arguments as text objects
 Plug 'vim-airline/vim-airline'     " Status line improvements
 Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
-"Plug 'jonathanfilip/vim-lucius'
 Plug 'zchee/hybrid.nvim'
 Plug 'rking/ag.vim'
+Plug 'airblade/vim-gitgutter'      " Show changed hunks
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
@@ -48,6 +48,7 @@ autocmd FileType go nmap <leader>g <Plug>(go-generate)
 autocmd FileType go nmap <leader>? :GoDoc<CR>
 autocmd FileType go nmap <leader>n :GoRename<CR>
 autocmd FileType go nmap <leader>l :GoMetaLinter<CR>
+autocmd FileType go nmap <leader>f :GoReferrers<CR>
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
