@@ -82,7 +82,10 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 source $HOME/.aliases
+#
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(direnv hook zsh)"
+
+source $HOME/.profile
