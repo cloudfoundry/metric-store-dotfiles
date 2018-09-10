@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'        " Quickly comment lines out and in
 Plug 'tpope/vim-fugitive'          " Help formatting commit messages
 Plug 'tpope/vim-dispatch'          " Allow background builds
 Plug 'tpope/vim-unimpaired'        " Add normal mode aliases for commonly used ex commands
+Plug 'tpope/vim-abolish'           " easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'fatih/vim-go'                " Helpful plugin for Golang dev
 Plug 'AndrewRadev/splitjoin.vim'   " Enable vim-go to split structs into multi lines
 Plug 'vim-scripts/bufkill.vim'     " Kill buffers and leave windows intact
