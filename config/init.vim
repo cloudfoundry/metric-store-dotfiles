@@ -86,6 +86,11 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 
 "-----------------------------------------------------------------------------
+" TEXT CONFIG
+"-----------------------------------------------------------------------------
+autocmd FileType markdown setlocal formatoptions+=t
+
+"-----------------------------------------------------------------------------
 " General Coding
 "-----------------------------------------------------------------------------
 xmap <leader>/ <Plug>Commentary
@@ -182,6 +187,7 @@ set noswapfile                  " disable swap files
 set nowb                        " disable writing backup
 set textwidth=78                " global text columns
 set formatoptions+=l            " don't break long lines less they are new
+set formatoptions-=t            " don't hard wrap
 
 set hlsearch                    " highlight search results
 set ignorecase                  " necessary for below to work
