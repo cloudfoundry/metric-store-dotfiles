@@ -205,6 +205,8 @@ set autowrite                   " automatically write file on `:make`
 autocmd BufWritePre * :%s/\s\+$//e " strip trailing whitespace on save
 autocmd BufLeave * silent! wall    " save on lost focus
 
+set path+=~/workspace           " add correct base path for `gf`
+
 " tab behavior
 set tabstop=4
 set softtabstop=4
