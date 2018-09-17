@@ -12,8 +12,16 @@ sudo apt install -y fonts-inconsolata gnome-tweak-tool httpie
 # these are required for lastpass-cli
 sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
 
+# Install rcm for dotfile symlink management
+wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
+echo "deb https://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+sudo apt-get update
+sudo apt-get install rcm
+
+# Refresh the font cache
 sudo fc-cache -fv
 
+# Install Rust with Rustup and source the Cargo environment variables
 packages/rust.sh
 source $HOME/.cargo/env
 
