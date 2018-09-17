@@ -3,6 +3,10 @@ export GIT_DUET_ROTATE_AUTHOR=1
 export GIT_DUET_SET_GIT_USER_CONFIG=1
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
+export VISUAL=vim
+export EDITOR=$VISUAL
+export GIT_EDITOR=$VISUAL
+
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$HOME/bin:$HOME/.bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin:$GOPATH/bin
 
