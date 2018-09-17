@@ -64,3 +64,8 @@ nvim +PlugInstall +GoInstallBinaries +qall
 
 # set caps lock to function as ctrl
 setxkbmap -layout us -option ctrl:nocaps
+
+# Install Oh My ZSH if we haven't already done so
+if [ ! -f $HOME/.oh-my-zsh ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
