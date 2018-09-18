@@ -39,3 +39,4 @@ alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests"
 # quick logins
 alias login='./cf_login'
 alias PWS='cf login -a api.run.pivotal.io -u cf-lamb@pivotallabs.com'
+alias quicklime='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/lime)"'
