@@ -106,7 +106,7 @@ prompt_git() {
     local LC_ALL="" LC_CTYPE="en_US.UTF-8"
     PL_BRANCH_CHAR=$'\ue0a0'         # 
   }
-  local ref dirty mode repo_path ahead_behind_markers
+  local ref dirty mode repo_path ahead_behind_markers commits_behind commits_ahead
   repo_path=$(git rev-parse --git-dir 2>/dev/null)
 
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
@@ -115,14 +115,16 @@ prompt_git() {
 
     if git symbolic-ref HEAD > /dev/null 2>&1; then
       branch=${ref#refs/heads/}
-      git rev-list --left-right --count "${branch}@{u}...HEAD" | read commits_behind commits_ahead
+      if git rev-list --left-right --count "${branch}@{u}...HEAD" 2>/dev/null | read commits_behind commits_ahead; then
+        if [[ $commits_behind != 0 ]]; then
+          ahead_behind_markers="${ahead_behind_markers} ↓${commits_behind}"
+        fi
 
-      if [[ $commits_behind != 0 ]]; then
-        ahead_behind_markers="${ahead_behind_markers} ↓${commits_behind}"
-      fi
-
-      if [[ $commits_ahead != 0 ]]; then
-        ahead_behind_markers="${ahead_behind_markers} ↑${commits_ahead}"
+        if [[ $commits_ahead != 0 ]]; then
+          ahead_behind_markers="${ahead_behind_markers} ↑${commits_ahead}"
+        fi
+      else
+        ahead_behind_markers=" ∄"
       fi
     fi
 
