@@ -17,7 +17,6 @@ alias flyl='fly -t log-cache'
 
 # environments
 alias lime='cd ~/workspace/log-cache-deployments/gcp/lime'
-alias citron='cd ~/workspace/log-cache-deployments/gcp/citron'
 
 # projects
 alias src='cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache'
@@ -35,8 +34,10 @@ alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/github.com/cl
 alias lct="cd ~/workspace/go/src/github.com/cloudfoundry-incubator/log-cache-tools"
 alias cfd='cd ~/workspace/cf-deployment'
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests"
+alias msr="cd ~/workspace/metric-store-release"
+alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-store"
 
 # quick logins
 alias login='./cf_login'
-alias PWS='cf login -a api.run.pivotal.io -u cf-lamb@pivotallabs.com'
+alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
 alias quicklime='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/lime)"'
