@@ -20,7 +20,7 @@ alias lime='cd ~/workspace/log-cache-deployments/gcp/lime'
 
 # projects
 alias src='cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache'
-alias glc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/go-log-cache"
+alias glc="cd ~/workspace/go-log-cache"
 alias tools="cd ~/workspace/go/src/github.com/log-cache-tools"
 alias dotfiles="cd ~/workspace/log-cache-dotfiles"
 alias lcr="cd ~/workspace/log-cache-release"
