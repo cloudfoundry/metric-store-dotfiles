@@ -27,6 +27,7 @@ Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
 Plug 'zchee/hybrid.nvim'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'      " Show changed hunks
+Plug 'Peeja/vim-cdo'
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
