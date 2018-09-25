@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=6.8.4
+VERSION=6.10.3
 
 if [[ `bbl version` = "bbl $VERSION "* ]]; then
     echo "Looks like bbl $VERSION is already installed, skipping..."
