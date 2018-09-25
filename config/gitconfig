@@ -5,7 +5,7 @@
 [alias]
   blog="log origin/master... --left-right"
   br=branch
-  cane="duet-commit --amend --no-edit --reset-author"
+  cane="duet-commit --amend --no-edit"
   ci=duet-commit
   co=checkout
   dc=diff --cached
