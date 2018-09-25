@@ -50,7 +50,6 @@ mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/alacritty
 
 ln -sf $SRC/git-authors $HOME/.git-authors
-ln -sf $SRC/gitconfig $HOME/.gitconfig
 ln -sf $SRC/tmux.conf $HOME/.tmux.conf
 ln -sf $SRC/bashrc $HOME/.bashrc
 ln -sf $SRC/bash_profile $HOME/.bash_profile
@@ -74,3 +73,6 @@ nvim +PlugInstall +GoInstallBinaries +qall
 if [ ! -f $HOME/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
+
+rm -f $HOME/.gitconfig
+git config --global include.path "$SRC"/gitconfig
