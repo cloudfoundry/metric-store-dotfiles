@@ -87,5 +87,6 @@ source $HOME/.aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(direnv hook zsh)"
+eval "$(ssh-agent)"
 
 source $HOME/.profile
