@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ssh
+alias hdub="~/workspace/add_prod_keys 8"
+
 # git
 alias gpr="git pull --rebase"
 alias gpp="git pull --rebase && git push"
@@ -17,6 +20,7 @@ alias flyl='fly -t log-cache'
 
 # environments
 alias lime='cd ~/workspace/log-cache-deployments/gcp/lime'
+alias satsuma='cd ~/workspace/log-cache-deployments/gcp/satsuma'
 
 # projects
 alias src='cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache'
@@ -41,3 +45,4 @@ alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-stor
 alias login='./cf_login'
 alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
 alias quicklime='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/lime)"'
+alias quicksatsuma='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/satsuma)"'
