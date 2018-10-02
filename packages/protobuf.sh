@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=3.6.0
+VERSION=3.6.1
 FILE=protoc-$VERSION-linux-x86_64.zip
 
 pushd $HOME/workspace
