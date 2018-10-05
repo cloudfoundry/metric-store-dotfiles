@@ -38,19 +38,24 @@ filetype plugin indent on
 "-----------------------------------------------------------------------------
 let g:go_fmt_command = "goimports"
 
+" speed up completion
+let g:go_gocode_propose_builtins = 0
+let g:go_gocode_propose_source = 0
+
 " highlight go-vim
 highlight goSameId term=bold cterm=bold ctermbg=250 ctermfg=239
 set updatetime=100 " updates :GoInfo faster
 
 " vim-go command shortcuts
+autocmd FileType go nmap <leader>? :GoDoc<CR>
+autocmd FileType go nmap <leader>d :GoDeclsDir<CR>
+autocmd FileType go nmap <leader>f :GoReferrers<CR>
+autocmd FileType go nmap <leader>g <Plug>(go-generate)
+autocmd FileType go nmap <leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>l :GoMetaLinter<CR>
+autocmd FileType go nmap <leader>n :GoRename<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t :wa<CR>:!clear;go test -v ./%:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
-autocmd FileType go nmap <leader>d :GoDeclsDir<CR>
-autocmd FileType go nmap <leader>g <Plug>(go-generate)
-autocmd FileType go nmap <leader>? :GoDoc<CR>
-autocmd FileType go nmap <leader>n :GoRename<CR>
-autocmd FileType go nmap <leader>l :GoMetaLinter<CR>
-autocmd FileType go nmap <leader>f :GoReferrers<CR>
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
