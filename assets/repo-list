@@ -12,3 +12,6 @@ cloudfoundry/loggregator-release
 cloudfoundry/deployments-loggregator
 cloudfoundry/go-loggregator
 cloudfoundry-incubator/loggregator-tools
+pivotal-cf/denver-bash-it
+pivotal-cf/denver-deployments
+pivotal-cf/denver-locks
