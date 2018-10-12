@@ -42,20 +42,14 @@ let g:go_fmt_command = "goimports"
 let g:go_gocode_propose_builtins = 0
 let g:go_gocode_propose_source = 0
 
+" detect errors after saving
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ["vet"]
+let g:go_metalinter_enabled = ["vet"]
+
 " highlight go-vim
 highlight goSameId term=bold cterm=bold ctermbg=250 ctermfg=239
 set updatetime=100 " updates :GoInfo faster
-
-" vim-go command shortcuts
-autocmd FileType go nmap <leader>? :GoDoc<CR>
-autocmd FileType go nmap <leader>d :GoDeclsDir<CR>
-autocmd FileType go nmap <leader>f :GoReferrers<CR>
-autocmd FileType go nmap <leader>g <Plug>(go-generate)
-autocmd FileType go nmap <leader>i <Plug>(go-info)
-autocmd FileType go nmap <leader>l :GoMetaLinter<CR>
-autocmd FileType go nmap <leader>n :GoRename<CR>
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>t :wa<CR>:!clear;go test -v ./%:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -74,8 +68,6 @@ function! s:toggle_coverage()
     highlight SpecialKey ctermfg=239
     highlight goSameId term=bold cterm=bold ctermbg=250 ctermfg=239
 endfunction
-
-autocmd FileType go nmap <leader>c :<C-u>call <SID>toggle_coverage()<CR>
 
 " This will add new commands, called :A, :AV, :AS and :AT. Here :A works just
 " like :GoAlternate, it replaces the current buffer with the alternate file.
@@ -96,12 +88,6 @@ autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 "-----------------------------------------------------------------------------
 autocmd FileType markdown setlocal formatoptions+=t
 
-"-----------------------------------------------------------------------------
-" General Coding
-"-----------------------------------------------------------------------------
-xmap <leader>/ <Plug>Commentary
-nmap <leader>/ <Plug>CommentaryLine
-
 "----------------------------------------------------------------------------
 " CTRL-P CONFIG
 "-----------------------------------------------------------------------------
@@ -112,9 +98,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 " stop setting git repo as root path
 let g:ctrlp_working_path_mode = ''
-
-nnoremap <silent> <leader>f :CtrlP<CR>
-noremap <leader>b :CtrlPBuffer<CR>
 
 "-----------------------------------------------------------------------------
 " nerd tree config
@@ -153,9 +136,6 @@ function! AgVisual()
   cexpr system(command)
   cw
 endfunction
-
-map <leader>a :call AgGrep()<CR>
-vmap <leader>a :call AgVisual()<CR>
 
 "------------------------------------------------------------------------------
 " APPEARANCE
@@ -244,8 +224,27 @@ cabbrev W w
 cabbrev Q q
 cabbrev Tabe tabe
 
-:noremap <leader>v :vsp<CR>
-:noremap <leader>h :split<CR>
+nnoremap <silent> <leader>a :call AgGrep()<CR>
+vnoremap <silent> <leader>a :call AgVisual()<CR>
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <leader>f :CtrlP<CR>
+nnoremap <leader>d :lclose<cr>:pclose<cr>:cclose<cr>
+nnoremap <leader>h :split<CR>
+nnoremap <leader>s :w<cr>
+nnoremap <leader>q :x<cr>
+nnoremap <leader>v :vsp<CR>
+
+" vim-go command shortcuts
+autocmd FileType go nnoremap <leader>? :GoDoc<CR>
+autocmd FileType go nnoremap <leader>. :GoDeclsDir<CR>
+autocmd FileType go nnoremap <leader>c :<C-u>call <SID>toggle_coverage()<CR>
+autocmd FileType go nnoremap <leader>f :GoReferrers<CR>
+autocmd FileType go nnoremap <leader>g <Plug>(go-generate)
+autocmd FileType go nnoremap <leader>i <Plug>(go-info)
+autocmd FileType go nnoremap <leader>l :GoMetaLinter<CR>
+autocmd FileType go nnoremap <leader>n :GoRename<CR>
+autocmd FileType go nnoremap <leader>r <Plug>(go-run)
+autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v ./%:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
 
 " reselect when indenting
 vnoremap < <gv
