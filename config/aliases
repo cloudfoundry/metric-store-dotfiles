@@ -46,3 +46,11 @@ alias login='./cf_login'
 alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
 alias quicklime='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/lime)"'
 alias quicksatsuma='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/satsuma)"'
+
+# wrappers
+
+# Makes ./ work to reference the current package, e.g.,
+# `gomvpkg -from ./foo -to ./bar`
+function gomvpkg {
+    command gomvpkg $(echo "$@" | sed -e "s, ./, ${PWD##$GOPATH/src/}/,g")
+}
