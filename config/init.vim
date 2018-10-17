@@ -179,6 +179,7 @@ set hlsearch                    " highlight search results
 set ignorecase                  " necessary for below to work
 set smartcase                   " ignore case if lower, otherwise match case
 set incsearch                   " jump to results as I search
+set gdefault                    " apply /g (replace all on line) by default
 set splitbelow                  " split panes on the bottom
 set splitright                  " split panes to the right
 
