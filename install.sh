@@ -91,6 +91,9 @@ echo_header "Install zsh"
 if [ ! -f $HOME/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
+ln -sf ~/workspace/log-cache-dotfiles/assets/agnoster-duet.zsh-theme $HOME/.oh-my-zsh/themes
+rcup -fv -d config zshrc
+echo_footer "zsh installed"
 
 rm -f $HOME/.gitconfig
 git config --global include.path "$SRC"/gitconfig
