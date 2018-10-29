@@ -58,7 +58,11 @@ do
   $package
 done;
 
-fly -t log-cache login -c https://log-cache.ci.cf-app.com
+echo_header "testing fly"
+if [[ `fly -t log-cache status` = "logged out" ]]; then
+    fly -t log-cache login -c https://log-cache.ci.cf-app.com
+fi
+echo_footer "fly tested"
 
 SRC=$HOME/workspace/log-cache-dotfiles/config
 
