@@ -1,9 +1,14 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+APP="ruby-install"
 VERSION=0.6.1
 
+echo_installing
+
 if [[ `ruby-install --version` = "ruby-install: $VERSION" ]]; then
-    echo "Looks like ruby-install $VERSION is already installed, skipping..."
+    echo_already_installed
     exit
 fi
 
@@ -16,3 +21,5 @@ rm ruby-install-$VERSION.tar.gz
 rm -rf ruby-install-$VERSION
 
 ruby-install
+
+echo_installed

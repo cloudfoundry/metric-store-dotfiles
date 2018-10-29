@@ -1,5 +1,9 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+echo_header "Installing git-hooks"
+
 HOOK=$(pwd)/assets/git-hooks/no-push-master
 for repo in $(find ~/workspace -name .git -type d); do
   for protected in loggregator-release loggregator-agent-release cf-syslog-drain-release log-cache-release cf-drain-cli noisy-neighbor-nozzle log-cache-cli service-metrics-release; do
@@ -12,3 +16,5 @@ for repo in $(find ~/workspace -name .git -type d); do
     popd
   done
 done
+
+echo_footer "git-hooks installed"

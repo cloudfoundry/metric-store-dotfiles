@@ -1,9 +1,14 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+APP="NeoVim"
 VERSION=0.3.1
 
+echo_installing
+
 if [[ `nvim --version | head -1` = "NVIM v$VERSION" ]]; then
-    echo "Looks like nvim $VERSION is already installed, skipping..."
+    echo_already_installed
     exit
 fi
 
@@ -20,3 +25,5 @@ pushd $HOME/workspace
   popd
   rm -rf neovim
 popd
+
+echo_installed

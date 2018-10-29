@@ -1,10 +1,15 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+APP="protobuf"
 VERSION=3.6.1
 FILE=protoc-$VERSION-linux-x86_64.zip
 
+echo_installing
+
 if [[ `protoc --version` = "libprotoc $VERSION" ]]; then
-    echo "Looks like fly $VERSION is already installed, skipping..."
+    echo_already_installed
     exit
 fi
 
@@ -18,3 +23,5 @@ pushd $HOME/workspace
   popd
   rm -rf protobuf
 popd
+
+echo_installed

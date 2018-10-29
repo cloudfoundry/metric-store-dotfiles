@@ -1,6 +1,11 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+APP="reconfigure-pipeline"
 VERSION=0.22.0
+
+echo_installing
 
 # reconfigure-pipelines doesn't currently output a version string anywhere.
 # we'll just reinstall it every time.
@@ -14,3 +19,5 @@ tar -xzvf reconfigure-pipeline-$VERSION.tar.gz
 sudo mv reconfigure-pipeline /usr/local/bin
 sudo chmod +x /usr/local/bin/reconfigure-pipeline
 rm reconfigure-pipeline-$VERSION.tar.gz
+
+echo_installed

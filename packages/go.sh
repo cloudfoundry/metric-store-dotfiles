@@ -1,9 +1,14 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+APP="go"
 VERSION=1.11.1
 
+echo_installing
+
 if [[ `go version` = "go version go$VERSION "* ]]; then
-    echo "Looks like go $VERSION is already installed, skipping..."
+    echo_already_installed
     exit
 fi
 
@@ -12,3 +17,5 @@ tar xzvf go$VERSION.linux-amd64.tar.gz
 sudo mv go /usr/local/go-$VERSION
 sudo ln -sf --no-dereference /usr/local/go-$VERSION /usr/local/go
 rm go$VERSION.linux-amd64.tar.gz
+
+echo_installed

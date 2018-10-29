@@ -1,9 +1,14 @@
 #!/bin/bash
 
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
+
+APP="ripgrep"
 VERSION=0.10.0
 
+echo_installing
+
 if [[ `rg --version | head -n1` == "ripgrep $VERSION"* ]]; then
-    echo "Looks like ripgrep $VERSION is already installed, skipping..."
+    echo_already_installed
     exit
 fi
 
@@ -18,3 +23,5 @@ pushd $HOME/workspace
   popd
   rm -rf ripgrep
 popd
+
+echo_installed

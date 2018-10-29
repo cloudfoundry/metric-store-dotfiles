@@ -1,7 +1,16 @@
 #!/bin/bash
 
-ruby-install ruby-2.4.5
-chruby ruby-2.4.5
-gem install cf-uaac
+. ~/workspace/log-cache-dotfiles/support/helpers.sh
 
+echo_header "Installing Ruby"
+ruby-install --no-reinstall ruby-2.4.5
+chruby ruby-2.4.5
+echo_footer "ruby installed"
+
+echo_header "Installing cf-uaac"
+gem install cf-uaac
+echo_footer "cf-uaac installed"
+
+echo_header "Installing yq"
 pip3 install yq
+echo_footer "yq installed"
