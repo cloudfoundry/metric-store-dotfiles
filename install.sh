@@ -15,6 +15,7 @@ sudo apt install -y neovim tmux git curl htop tree silversearcher-ag openssh-ser
 sudo apt install -y python3 python3-pip jq zsh
 sudo apt install -y libxml2 libxml2-dev libcurl4-gnutls-dev
 sudo apt install -y fonts-inconsolata gnome-tweak-tool httpie
+sudo apt install -y direnv
 
 # these are required for lastpass-cli
 sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
