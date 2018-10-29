@@ -7,6 +7,7 @@ alias hdub="~/workspace/add_prod_keys 8"
 alias gpr="git pull --rebase"
 alias gpp="git pull --rebase && git push"
 alias gs="git status"
+alias gst="git status"
 
 # system
 alias ll="ls -la"
