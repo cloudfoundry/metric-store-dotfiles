@@ -69,16 +69,11 @@ SRC=$HOME/workspace/log-cache-dotfiles/config
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/alacritty
 
-ln -sf $SRC/git-authors $HOME/.git-authors
-ln -sf $SRC/tmux.conf $HOME/.tmux.conf
-ln -sf $SRC/bashrc $HOME/.bashrc
-ln -sf $SRC/bash_profile $HOME/.bash_profile
-ln -sf $SRC/profile $HOME/.profile
-ln -sf $SRC/gemrc $HOME/.gemrc
-ln -sf $SRC/aliases $HOME/.aliases
+echo_header "link dotfiles"
 ln -sf $SRC/init.vim $HOME/.config/nvim/init.vim
 ln -sf $SRC/alacritty.yml $HOME/.config/alacritty/alacritty.yml
-ln -sf $SRC/ruby-version $HOME/.ruby-version
+rcup -fv -x gitconfig -x zshrc -x bash_darwin -x init.vim -x alacritty.yml -d config
+echo_footer "dotfiles linked"
 
 source $HOME/.profile
 source $HOME/.bash_profile
