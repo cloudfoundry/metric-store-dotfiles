@@ -75,12 +75,13 @@ ln -sf $SRC/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 rcup -fv -x gitconfig -x zshrc -x bash_darwin -x init.vim -x alacritty.yml -d config
 echo_footer "dotfiles linked"
 
+echo_header "post install"
+./post-install.sh
+
 source $HOME/.profile
 source $HOME/.bash_profile
 source $HOME/.bashrc
 source $HOME/.aliases
-
-./post-install.sh
 
 echo_header "Install NeoVim plugins"
 nvim +PlugInstall +GoInstallBinaries +qall
