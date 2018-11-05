@@ -27,7 +27,9 @@ Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
 Plug 'zchee/hybrid.nvim'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'      " Show changed hunks
-Plug 'Peeja/vim-cdo'
+Plug 'kana/vim-textobj-user'       " Dependency for the following textobj plugins
+Plug 'Julian/vim-textobj-variable-segment' " Change parts of a variable name
+Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
