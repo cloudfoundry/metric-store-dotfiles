@@ -205,6 +205,8 @@ set smarttab
 
 " smaller indents for yaml
 autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 expandtab
+" Include - in word text objects, * command
+autocmd Filetype yaml setlocal iskeyword+=-
 
 "------------------------------------------------------------------------------
 " LEADER MAPPINGS
