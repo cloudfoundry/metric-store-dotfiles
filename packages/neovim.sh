@@ -18,7 +18,7 @@ pushd $HOME/workspace
   mkdir neovim
   pushd neovim
     wget https://github.com/neovim/neovim/archive/v$VERSION.tar.gz
-    unzip neovim-$VERSION.tar.gz
+    tar xf v$VERSION.tar.gz
     cd neovim-$VERSION
     make CMAKE_BUILD_TYPE=RelWithDebInfo
     sudo make install

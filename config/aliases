@@ -18,6 +18,7 @@ alias blc='bosh -e lite -d cf'
 alias python='python3'
 alias pip='pip3'
 alias flyl='fly -t log-cache'
+alias flyp='fly -t prod'
 
 # environments
 alias satsuma='cd ~/workspace/log-cache-deployments/gcp/satsuma'
@@ -47,7 +48,7 @@ alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
 alias quicksatsuma='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/satsuma)"'
 
 # wrappers
-alias vim='/usr/local/bin/nvim'
+alias vim='nvim'
 
 # Makes ./ work to reference the current package, e.g.,
 # `gomvpkg -from ./foo -to ./bar`
