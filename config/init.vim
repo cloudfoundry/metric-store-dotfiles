@@ -24,12 +24,14 @@ Plug 'scrooloose/nerdtree'         " Directory tree explorer
 Plug 'gaving/vim-textobj-argument' " Function arguments as text objects
 Plug 'vim-airline/vim-airline'     " Status line improvements
 Plug 'vim-scripts/regreplop.vim'   " Replace with a specified register
-Plug 'zchee/hybrid.nvim'
-Plug 'rking/ag.vim'
+Plug 'zchee/hybrid.nvim'           " Hybrid colorscheme
+Plug 'rking/ag.vim'                " Find text in project
 Plug 'airblade/vim-gitgutter'      " Show changed hunks
 Plug 'kana/vim-textobj-user'       " Dependency for the following textobj plugins
 Plug 'pianohacker/vim-textobj-variable-segment' " Change parts of a variable name
 Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
+Plug 'tpope/vim-repeat'            " properly repeat plugin commands
+Plug 'w0rp/ale'                    " asynchronous linting
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
@@ -43,11 +45,6 @@ let g:go_fmt_command = "goimports"
 " speed up completion
 let g:go_gocode_propose_builtins = 0
 let g:go_gocode_propose_source = 0
-
-" detect errors after saving
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ["vet"]
-let g:go_metalinter_enabled = ["vet"]
 
 " highlight go-vim
 highlight goSameId term=bold cterm=bold ctermbg=250 ctermfg=239
@@ -107,6 +104,18 @@ let g:ctrlp_working_path_mode = ''
 map <C-n> :NERDTreeToggle<CR>
 map \ :NERDTreeToggle<CR>
 map \| :NERDTreeFind<CR>
+
+"-----------------------------------------------------------------------------
+" ALE config
+"-----------------------------------------------------------------------------
+
+let g:ale_linters = {
+\ "go": ["gofmt", "govet"],
+\ }
+let g:ale_go_govet_options = '-lostcancel=false -methods=false'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_set_loclist=0
+let g:ale_set_quickfix=1
 
 "-----------------------------------------------------------------------------
 " Search
