@@ -266,3 +266,11 @@ set laststatus=2
 " resize windows more easily
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" remap ) and ( to indented-paragraph motions
+call textobj#user#map("indentedparagraph", {
+\   "-": {
+\       "move-n": ")",
+\       "move-p": "(",
+\   }
+\})
