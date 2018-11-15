@@ -261,7 +261,7 @@ autocmd FileType go nnoremap <leader>i <Plug>(go-info)
 autocmd FileType go nnoremap <leader>l :GoMetaLinter<CR>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
 autocmd FileType go nnoremap <leader>r <Plug>(go-run)
-autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v ./%:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
+autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
 
 " reselect when indenting
 vnoremap < <gv
