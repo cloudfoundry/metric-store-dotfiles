@@ -117,6 +117,7 @@ let g:ale_lint_on_text_changed = 'never'
 
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
+let g:ale_open_list = 1
 
 "-----------------------------------------------------------------------------
 " Search
