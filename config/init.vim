@@ -114,8 +114,6 @@ let g:ale_linters = {
 \ }
 let g:ale_go_govet_options = '-lostcancel=false -methods=false'
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_set_loclist=0
-let g:ale_set_quickfix=1
 
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
