@@ -257,7 +257,7 @@ autocmd FileType go nnoremap <leader>. :GoDeclsDir<CR>
 autocmd FileType go nnoremap <leader>c :<C-u>call <SID>toggle_coverage()<CR>
 autocmd FileType go nnoremap <leader>f :GoReferrers<CR>
 autocmd FileType go nnoremap <leader>g <Plug>(go-generate)
-autocmd FileType go nnoremap <leader>i <Plug>(go-info)
+autocmd FileType go nnoremap <leader>i <Plug>(go-implements)
 autocmd FileType go nnoremap <leader>l :GoMetaLinter<CR>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
 autocmd FileType go nnoremap <leader>r <Plug>(go-run)
