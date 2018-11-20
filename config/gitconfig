@@ -20,6 +20,7 @@
   lola="log --graph --decorate --oneline --all"
   p="pull --rebase --autostash"
   rum="rebase master@{u}"
+  shove="push -f"
   squash="commit --squash"
   st=status
   sta=stash
