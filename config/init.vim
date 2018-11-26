@@ -41,6 +41,7 @@ filetype plugin indent on
 " VIM-GO CONFIG
 "-----------------------------------------------------------------------------
 let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
 
 " speed up completion
 let g:go_gocode_propose_builtins = 0
