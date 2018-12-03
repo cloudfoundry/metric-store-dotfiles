@@ -244,7 +244,9 @@ nnoremap <space> :nohlsearch<cr>
 
 " sometimes I hold the shift too long ... just allow it
 cabbrev W w
+cabbrev Wa wa
 cabbrev Q q
+cabbrev Qa qa
 cabbrev Tabe tabe
 
 nnoremap <silent> <leader>a :call AgGrep()<CR>
