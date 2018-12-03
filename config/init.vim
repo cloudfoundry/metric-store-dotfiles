@@ -32,6 +32,15 @@ Plug 'pianohacker/vim-textobj-variable-segment' " Change parts of a variable nam
 Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
 Plug 'tpope/vim-repeat'            " properly repeat plugin commands
 Plug 'w0rp/ale'                    " asynchronous linting
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
@@ -42,10 +51,7 @@ filetype plugin indent on
 "-----------------------------------------------------------------------------
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
-
-" speed up completion
-let g:go_gocode_propose_builtins = 0
-let g:go_gocode_propose_source = 0
+let g:go_def_mapping_enabled = 0
 
 " highlight go-vim
 highlight goSameId term=bold cterm=bold ctermbg=250 ctermfg=239
@@ -256,11 +262,13 @@ autocmd FileType go nnoremap <leader>? :GoDoc<CR>
 autocmd FileType go nnoremap <leader>. :GoDeclsDir<CR>
 autocmd FileType go nnoremap <leader>c :<C-u>call <SID>toggle_coverage()<CR>
 autocmd FileType go nnoremap <leader>f :GoReferrers<CR>
-autocmd FileType go nnoremap <leader>g <Plug>(go-generate)
-autocmd FileType go nnoremap <leader>i <Plug>(go-implements)
+autocmd FileType go nmap <leader>g <Plug>(go-generate)
+autocmd FileType go nmap <leader>i <Plug>(go-info)
 autocmd FileType go nnoremap <leader>l :GoMetaLinter<CR>
+autocmd FileType go nmap <leader>m <Plug>(go-implements)
+autocmd FileType go nmap <leader>M :GoImpl<Space>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
-autocmd FileType go nnoremap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
 
 " reselect when indenting
@@ -286,3 +294,15 @@ call textobj#user#map("indentedparagraph", {
 \       "move-p": "(",
 \   }
 \})
+
+let g:LanguageClient_diagnosticsEnable = 0
+
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['/home/pivotal/workspace/go/bin/bingo', '--disable-diagnostics', 'true', '--mode', 'stdio', '--logfile', '/tmp/bingo.log'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
