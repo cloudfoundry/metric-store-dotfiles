@@ -63,6 +63,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source ~/workspace/log-cache-dotfiles/support/global-funcs.sh
 
+# zsh-fzy
+source ~/workspace/log-cache-dotfiles/support/zsh-fzy.plugin.zsh
+bindkey '\ec' fzy-cd-widget
+bindkey '^P'  fzy-file-widget
+bindkey '^R'  fzy-history-widget
+zstyle :fzy:file command rg --files
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
