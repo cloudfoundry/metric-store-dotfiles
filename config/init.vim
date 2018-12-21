@@ -271,6 +271,10 @@ autocmd FileType go nmap <leader>M :GoImpl<Space>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-referrers)
 autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
+autocmd FileType go nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+autocmd FileType go nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" Faster but less comprehensive rename
+autocmd FileType go nnoremap <silent> <leader>N :call LanguageClient#textDocument_rename()<CR>
 
 " reselect when indenting
 vnoremap < <gv
@@ -297,14 +301,10 @@ call textobj#user#map("indentedparagraph", {
 \})
 
 let g:LanguageClient_diagnosticsEnable = 0
+let g:LanguageClient_diagnosticsSignsMax = 0
+let g:LanguageClient_diagnosticsList = ""
 let g:LanguageClient_rootMarkers = ['.envrc']
 
 let g:LanguageClient_serverCommands = {
     \ 'go': ['/home/pivotal/workspace/go/bin/bingo', '--disable-diagnostics', 'true', '--mode', 'stdio', '--logfile', '/tmp/bingo.log'],
     \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
