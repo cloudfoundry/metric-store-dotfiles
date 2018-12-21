@@ -302,7 +302,7 @@ call textobj#user#map("indentedparagraph", {
 
 let g:LanguageClient_diagnosticsEnable = 0
 let g:LanguageClient_diagnosticsSignsMax = 0
-let g:LanguageClient_diagnosticsList = ""
+let g:LanguageClient_diagnosticsList = "Disabled"
 let g:LanguageClient_rootMarkers = ['.envrc']
 
 let g:LanguageClient_serverCommands = {
