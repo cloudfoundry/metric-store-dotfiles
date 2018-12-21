@@ -297,6 +297,7 @@ call textobj#user#map("indentedparagraph", {
 \})
 
 let g:LanguageClient_diagnosticsEnable = 0
+let g:LanguageClient_rootMarkers = ['.envrc']
 
 let g:LanguageClient_serverCommands = {
     \ 'go': ['/home/pivotal/workspace/go/bin/bingo', '--disable-diagnostics', 'true', '--mode', 'stdio', '--logfile', '/tmp/bingo.log'],
