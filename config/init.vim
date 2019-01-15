@@ -202,6 +202,7 @@ set incsearch                   " jump to results as I search
 set gdefault                    " apply /g (replace all on line) by default
 set splitbelow                  " split panes on the bottom
 set splitright                  " split panes to the right
+set inccommand=nosplit          " show preview during find and replace operations
 
 set history=10000               " keep a longer history
 
