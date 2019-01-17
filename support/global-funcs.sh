@@ -18,7 +18,32 @@ msq() {
     fi
 }
 
+tmux_get_window_name() {
+    if [ -v TMUX ]; then
+        tmux display-message -p "#W"
+    fi
+}
+
+tmux_set_window_name() {
+    local window_name=${1}
+
+    if [ -v TMUX ]; then
+        printf "\033k${window_name}\033\\"
+    fi
+}
+
+tmux_try_rename() {
+    local window_name=${1}
+    local current_name=$(tmux_get_window_name)
+
+    if [[ "${current_name}" != "Bosh Prod" ]]; then
+        tmux_set_window_name $window_name
+    fi
+}
+
 target_prod() {
+    local current_window_name=$(tmux_get_window_name)
+
     cat > /tmp/director_ca.crt <<EOF
 -----BEGIN CERTIFICATE-----
 MIIDtzCCAp+gAwIBAgIJAPCHksVa5MwFMA0GCSqGSIb3DQEBBQUAMEUxCzAJBgNV
@@ -50,21 +75,24 @@ EOF
     ssoca -e pws-prod auth login
     ssoca -e pws-prod openvpn exec --sudo >/tmp/ssoca.log 2>&1 &
     SSOCA_PID=$!
-    trap "cleanup_prod ${SSOCA_PID}" EXIT
+    trap "cleanup_prod ${SSOCA_PID} ${current_window_name}" EXIT
 
     echo "This might take a second while the VPN gets established..."
     bosh alias-env prod -e 10.10.0.7 --ca-cert /tmp/director_ca.crt
     bosh -e prod login
     export BOSH_ENVIRONMENT=prod
 
+    tmux_set_window_name "Bosh Prod"
     zsh
 }
 
 cleanup_prod() {
     local ssoca_pid=${1}
+    local previous_window_name=${2}
 
     kill ${ssoca_pid}
     ssoca -e pws-prod auth logout
     unset BOSH_ENVIRONMENT
     rm /tmp/director_ca.crt
+    tmux_set_window_name ${previous_window_name}
 }

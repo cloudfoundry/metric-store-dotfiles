@@ -24,23 +24,23 @@ alias flyp='fly -t prod'
 alias satsuma='cd ~/workspace/log-cache-deployments/gcp/satsuma'
 
 # projects
-alias src='cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache'
-alias glc="cd ~/workspace/go-log-cache"
-alias tools="cd ~/workspace/go/src/github.com/log-cache-tools"
-alias dotfiles="cd ~/workspace/log-cache-dotfiles"
-alias lcr="cd ~/workspace/log-cache-release"
-alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache"
-alias lcd="cd ~/workspace/log-cache-deployments"
-alias ci="cd ~/workspace/log-cache-ci"
-alias lci="cd ~/workspace/log-cache-ci"
-alias lcli="cd ~/workspace/log-cache-cli"
-alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release"
-alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/github.com/cloudfoundry/log-cache-acceptance-tests"
-alias lct="cd ~/workspace/go/src/github.com/cloudfoundry-incubator/log-cache-tools"
-alias cfd='cd ~/workspace/cf-deployment'
-alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests"
-alias msr="cd ~/workspace/metric-store-release"
-alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-store"
+alias src="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache; tmux_try_rename 'lc'"
+alias glc="cd ~/workspace/go-log-cache; tmux_try_rename 'go-lc'"
+alias tools="cd ~/workspace/go/src/github.com/log-cache-tools; tmux_try_rename 'lc-tools'"
+alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
+alias lcr="cd ~/workspace/log-cache-release; tmux_try_rename 'lcr'"
+alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache; tmux_try_rename 'lc'"
+alias lcd="cd ~/workspace/log-cache-deployments; tmux_try_rename 'lcd'"
+alias ci="cd ~/workspace/log-cache-ci; tmux_try_rename 'CI'"
+alias lci="cd ~/workspace/log-cache-ci; tmux_try_rename 'CI'"
+alias lcli="cd ~/workspace/log-cache-cli; tmux_try_rename 'lc-cli'"
+alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release; tmux_try_rename 'lcats release'"
+alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/github.com/cloudfoundry/log-cache-acceptance-tests; tmux_try_rename 'lcats'"
+alias lct="cd ~/workspace/go/src/github.com/cloudfoundry-incubator/log-cache-tools; tmux_try_rename 'lc-tools'"
+alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
+alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
+alias msr="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
+alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-store; tmux_try_rename 'ms'"
 
 # quick logins
 alias login='./cf_login'
