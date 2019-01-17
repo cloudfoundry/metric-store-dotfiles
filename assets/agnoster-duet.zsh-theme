@@ -98,6 +98,22 @@ prompt_git_duet() {
   fi
 }
 
+prompt_bosh() {
+  if [ -v BOSH_ENVIRONMENT ]; then
+    if [[ "${BOSH_ENVIRONMENT}" = "prod" ]]; then
+      prompt_segment red white
+      echo -n "!! ${BOSH_ENVIRONMENT:u} !!"
+    else
+      prompt_segment green black
+      if [ -v BOSH_ENV_NAME ]; then
+        echo -n "${BOSH_ENV_NAME}"
+      else
+        echo -n "${BOSH_ENVIRONMENT}"
+      fi
+    fi
+  fi
+}
+
 # Git: branch/detached head, dirty status
 prompt_git() {
   (( $+commands[git] )) || return
@@ -190,6 +206,7 @@ build_prompt() {
   prompt_context
   prompt_dir
   prompt_git_duet
+  prompt_bosh
   prompt_git
   prompt_end
 }
