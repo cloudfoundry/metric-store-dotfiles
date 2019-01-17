@@ -46,6 +46,7 @@ alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-stor
 alias login='./cf_login'
 alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
 alias quicksatsuma='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/satsuma)"'
+alias prod_target='target_prod'
 
 # wrappers
 alias vim='nvim'

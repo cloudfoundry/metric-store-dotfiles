@@ -50,7 +50,7 @@ EOF
     ssoca -e pws-prod auth login
     ssoca -e pws-prod openvpn exec --sudo >/tmp/ssoca.log 2>&1 &
     SSOCA_PID=$!
-    trap "kill ${SSOCA_PID}; ssoca -e pws-prod auth logout" EXIT
+    trap "cleanup_prod ${SSOCA_PID}" EXIT
 
     echo "This might take a second while the VPN gets established..."
     bosh alias-env prod -e 10.10.0.7 --ca-cert /tmp/director_ca.crt
@@ -58,4 +58,13 @@ EOF
     export BOSH_ENVIRONMENT=prod
 
     zsh
+}
+
+cleanup_prod() {
+    local ssoca_pid=${1}
+
+    kill ${ssoca_pid}
+    ssoca -e pws-prod auth logout
+    unset BOSH_ENVIRONMENT
+    rm /tmp/director_ca.crt
 }
