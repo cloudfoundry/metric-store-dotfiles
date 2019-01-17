@@ -7,6 +7,14 @@ VERSION=0.2.1
 
 echo_installing
 
+/bin/ps -auxw | /bin/grep " alacritty" | grep -q -v grep
+is_alacritty_running=$?
+
+if [ $is_alacritty_running -eq 0 ]; then
+    echo_error "You cannot update alacritty while alacritty is running, please exit and use default terminal."
+    exit
+fi
+
 if [[ `alacritty --version` = "alacritty $VERSION" ]]; then
     echo_already_installed
     exit
