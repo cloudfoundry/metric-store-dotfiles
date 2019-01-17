@@ -3,7 +3,7 @@
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 APP="Alacritty"
-VERSION=0.2.1
+VERSION=0.2.5
 
 echo_installing
 
@@ -20,17 +20,10 @@ if [[ `alacritty --version` = "alacritty $VERSION" ]]; then
     exit
 fi
 
-sudo apt-get update
-sudo apt-get install -y cmake libfreetype6-dev libfontconfig1-dev xclip
-
-within_temp_dir
-  wget https://github.com/jwilm/alacritty/archive/v$VERSION.zip
-  unzip v$VERSION.zip
-  cd alacritty-$VERSION
-  cargo build --release
-  sudo cp target/release/alacritty /usr/local/bin
-  sudo desktop-file-install alacritty.desktop
-  sudo update-desktop-database
-end_temp_dir
+wget https://github.com/jwilm/alacritty/releases/download/v${VERSION}/Alacritty-v${VERSION}-x86_64.tar.gz
+tar xzf Alacritty-v${VERSION}-x86_64.tar.gz
+rm Alacritty-v${VERSION}-x86_64.tar.gz
+sudo mv alacritty /usr/local/bin
+sudo chmod +x /usr/local/bin/alacritty
 
 echo_installed
