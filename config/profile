@@ -15,6 +15,5 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 source $HOME/workspace/denver-bash-it/custom/environment-targeting.bash
-source $HOME/workspace/denver-bash-it/custom/target-prod.bash
 
 export PATH="$HOME/.cargo/bin:$PATH"
