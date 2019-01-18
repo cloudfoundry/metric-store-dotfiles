@@ -24,6 +24,19 @@ tmux_get_window_name() {
     fi
 }
 
+tmux_set_window_name_from_panes() {
+    if [ -v TMUX ]; then
+        window_name=$(tmux list-panes -F "#T" | paste -s -d "+")
+        tmux_set_window_name ${window_name}
+    fi
+}
+
+tmux_get_pane_title() {
+    if [ -v TMUX ]; then
+        tmux display-message -p "#T"
+    fi
+}
+
 tmux_set_window_name() {
     local window_name=${1}
 
@@ -32,12 +45,21 @@ tmux_set_window_name() {
     fi
 }
 
-tmux_try_rename() {
-    local window_name=${1}
-    local current_name=$(tmux_get_window_name)
+tmux_set_pane_title() {
+    local pane_title=${1}
 
-    if [[ "${current_name}" != "Bosh Prod" ]]; then
-        tmux_set_window_name $window_name
+    if [ -v TMUX ]; then
+        printf "\033]2;${pane_title}\033\\"
+    fi
+}
+
+tmux_try_rename() {
+    local pane_title=${1}
+    local current_title=$(tmux_get_pane_title)
+
+    if [[ "${current_title}" != "Bosh Prod" ]]; then
+        tmux_set_pane_title $pane_title
+        tmux_set_window_name_from_panes
     fi
 }
 
