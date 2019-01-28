@@ -32,15 +32,7 @@ Plug 'pianohacker/vim-textobj-variable-segment' " Change parts of a variable nam
 Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
 Plug 'tpope/vim-repeat'            " properly repeat plugin commands
 Plug 'w0rp/ale'                    " asynchronous linting
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
-" (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
@@ -51,7 +43,6 @@ filetype plugin indent on
 "-----------------------------------------------------------------------------
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
-let g:go_def_mapping_enabled = 0
 
 " highlight go-vim
 highlight goSameId term=bold cterm=bold ctermbg=250 ctermfg=239
@@ -272,10 +263,6 @@ autocmd FileType go nmap <leader>M :GoImpl<Space>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-referrers)
 autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
-autocmd FileType go nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-autocmd FileType go nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" Faster but less comprehensive rename
-autocmd FileType go nnoremap <silent> <leader>N :call LanguageClient#textDocument_rename()<CR>
 
 " reselect when indenting
 vnoremap < <gv
@@ -300,12 +287,3 @@ call textobj#user#map("indentedparagraph", {
 \       "move-p": "(",
 \   }
 \})
-
-let g:LanguageClient_diagnosticsEnable = 0
-let g:LanguageClient_diagnosticsSignsMax = 0
-let g:LanguageClient_diagnosticsList = "Disabled"
-let g:LanguageClient_rootMarkers = ['.envrc']
-
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['/home/pivotal/workspace/go/bin/bingo', '--disable-diagnostics', 'true', '--mode', 'stdio', '--logfile', '/tmp/bingo.log'],
-    \ }
