@@ -3,7 +3,7 @@
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 APP="bosh"
-VERSION=5.3.1
+VERSION=5.4.0
 FILE=bosh-cli-$VERSION-linux-amd64
 
 echo_installing

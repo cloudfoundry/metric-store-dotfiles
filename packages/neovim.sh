@@ -3,7 +3,7 @@
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 APP="NeoVim"
-VERSION=0.3.1
+VERSION=0.3.4
 
 echo_installing
 

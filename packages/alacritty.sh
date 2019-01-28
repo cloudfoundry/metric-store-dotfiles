@@ -3,7 +3,7 @@
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 APP="Alacritty"
-VERSION=0.2.5
+VERSION=0.2.7
 
 echo_installing
 
