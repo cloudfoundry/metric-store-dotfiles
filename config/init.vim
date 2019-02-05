@@ -262,7 +262,7 @@ autocmd FileType go nmap <leader>m <Plug>(go-implements)
 autocmd FileType go nmap <leader>M :GoImpl<Space>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-referrers)
-autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
+autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;ulimit -Sn unlimited; go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
 
 " reselect when indenting
 vnoremap < <gv
