@@ -32,6 +32,7 @@ Plug 'pianohacker/vim-textobj-variable-segment' " Change parts of a variable nam
 Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
 Plug 'tpope/vim-repeat'            " properly repeat plugin commands
 Plug 'w0rp/ale'                    " asynchronous linting
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()                    " Complete vim-plug initialization
 
@@ -147,6 +148,11 @@ function! AgVisual()
   cexpr system(command)
   cw
 endfunction
+
+"-----------------------------------------------------------------------------
+" Autocomplete
+"-----------------------------------------------------------------------------
+let g:deoplete#enable_at_startup = 1
 
 "------------------------------------------------------------------------------
 " APPEARANCE
