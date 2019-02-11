@@ -21,7 +21,6 @@ alias flyp='fly -t prod'
 alias satsuma='cd ~/workspace/log-cache-deployments/gcp/satsuma'
 
 # projects
-alias src="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache; tmux_try_rename 'lc'"
 alias glc="cd ~/workspace/go-log-cache; tmux_try_rename 'go-lc'"
 alias tools="cd ~/workspace/go/src/github.com/log-cache-tools; tmux_try_rename 'lc-tools'"
 alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
