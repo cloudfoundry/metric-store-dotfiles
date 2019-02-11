@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# ssh
-alias hdub="~/workspace/add_prod_keys 8"
-
 # git
 alias gpr="git pull --rebase"
 alias gpp="git pull --rebase && git push"
