@@ -17,9 +17,6 @@ alias pip='pip3'
 alias flyl='fly -t log-cache'
 alias flyp='fly -t prod'
 
-# environments
-alias satsuma='cd ~/workspace/log-cache-deployments/gcp/satsuma'
-
 # projects
 alias glc="cd ~/workspace/go-log-cache; tmux_try_rename 'go-lc'"
 alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
@@ -40,7 +37,6 @@ alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-stor
 # quick logins
 alias login='./cf_login'
 alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
-alias quicksatsuma='eval "$(bbl print-env --state-dir ~/workspace/log-cache-deployments/gcp/satsuma)"'
 alias prod_target='target_prod'
 
 # wrappers
