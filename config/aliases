@@ -22,7 +22,6 @@ alias satsuma='cd ~/workspace/log-cache-deployments/gcp/satsuma'
 
 # projects
 alias glc="cd ~/workspace/go-log-cache; tmux_try_rename 'go-lc'"
-alias tools="cd ~/workspace/go/src/github.com/log-cache-tools; tmux_try_rename 'lc-tools'"
 alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
 alias lcr="cd ~/workspace/log-cache-release; tmux_try_rename 'lcr'"
 alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache; tmux_try_rename 'lc'"
@@ -32,7 +31,7 @@ alias lci="cd ~/workspace/log-cache-ci; tmux_try_rename 'CI'"
 alias lcli="cd ~/workspace/log-cache-cli; tmux_try_rename 'lc-cli'"
 alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release; tmux_try_rename 'lcats release'"
 alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/github.com/cloudfoundry/log-cache-acceptance-tests; tmux_try_rename 'lcats'"
-alias lct="cd ~/workspace/go/src/github.com/cloudfoundry-incubator/log-cache-tools; tmux_try_rename 'lc-tools'"
+alias lct="cd ~/workspace/log-cache-tools; tmux_try_rename 'lc-tools'"
 alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
 alias msr="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
