@@ -12,10 +12,10 @@ if [[ `go version` = "go version go$VERSION "* ]]; then
     exit
 fi
 
-wget https://dl.google.com/go/go$VERSION.linux-amd64.tar.gz
-tar xzvf go$VERSION.linux-amd64.tar.gz
-sudo mv go /usr/local/go-$VERSION
-sudo ln -sf --no-dereference /usr/local/go-$VERSION /usr/local/go
-rm go$VERSION.linux-amd64.tar.gz
-
-echo_installed
+start_install
+  wget https://dl.google.com/go/go$VERSION.linux-amd64.tar.gz
+  tar xzvf go$VERSION.linux-amd64.tar.gz
+  sudo mv go /usr/local/go-$VERSION
+  sudo ln -sf --no-dereference /usr/local/go-$VERSION /usr/local/go
+  rm go$VERSION.linux-amd64.tar.gz
+end_install

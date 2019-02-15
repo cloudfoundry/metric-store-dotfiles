@@ -13,15 +13,15 @@ if [[ `protoc --version` = "libprotoc $VERSION" ]]; then
     exit
 fi
 
-pushd $HOME/workspace
-  mkdir protobuf
-  pushd protobuf
-    wget https://github.com/google/protobuf/releases/download/v$VERSION/$FILE
-    unzip $FILE
-    sudo mv -f bin/* /usr/local/bin/
-    sudo cp -R include/* /usr/local/include/
+start_install
+  pushd $HOME/workspace
+    mkdir protobuf
+    pushd protobuf
+      wget https://github.com/google/protobuf/releases/download/v$VERSION/$FILE
+      unzip $FILE
+      sudo mv -f bin/* /usr/local/bin/
+      sudo cp -R include/* /usr/local/include/
+    popd
+    rm -rf protobuf
   popd
-  rm -rf protobuf
-popd
-
-echo_installed
+end_install

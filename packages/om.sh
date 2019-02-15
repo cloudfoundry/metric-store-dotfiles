@@ -13,8 +13,8 @@ if [[ `om --version` = "${VERSION}" ]]; then
     exit
 fi
 
-wget https://github.com/pivotal-cf/om/releases/download/${VERSION}/${FILE}
-chmod +x $FILE
-sudo mv $FILE /usr/local/bin/om
-
-echo_installed
+start_install
+  wget https://github.com/pivotal-cf/om/releases/download/${VERSION}/${FILE}
+  chmod +x $FILE
+  sudo mv $FILE /usr/local/bin/om
+end_install

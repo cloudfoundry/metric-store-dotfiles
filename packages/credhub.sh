@@ -12,9 +12,9 @@ if [[ `credhub --version | head -n1` = "CLI Version: $VERSION" ]]; then
     exit
 fi
 
-wget https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/$VERSION/credhub-linux-$VERSION.tgz
-tar -xzvf credhub-linux-$VERSION.tgz
-sudo mv credhub /usr/local/bin
-rm credhub-linux-$VERSION.tgz
-
-echo_installed
+start_install
+  wget https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/$VERSION/credhub-linux-$VERSION.tgz
+  tar -xzvf credhub-linux-$VERSION.tgz
+  sudo mv credhub /usr/local/bin
+  rm credhub-linux-$VERSION.tgz
+end_install

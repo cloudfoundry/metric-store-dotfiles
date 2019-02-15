@@ -13,9 +13,9 @@ if [[ `ssoca version` = "ssoca-client/$VERSION "* ]]; then
     exit
 fi
 
-wget -O /usr/local/bin/${APP} https://s3-external-1.amazonaws.com/dpb587-ssoca-us-east-1/artifacts/v${VERSION}/ab7b8de0878b8b70664748a01d1f4742c634944e
-echo "${SHASUM}  /usr/local/bin/${APP}" | shasum -c -
+start_install
+  wget -O /usr/local/bin/${APP} https://s3-external-1.amazonaws.com/dpb587-ssoca-us-east-1/artifacts/v${VERSION}/ab7b8de0878b8b70664748a01d1f4742c634944e
+  echo "${SHASUM}  /usr/local/bin/${APP}" | shasum -c -
 
-chmod +x /usr/local/bin/${APP}
-
-echo_installed
+  chmod +x /usr/local/bin/${APP}
+end_install

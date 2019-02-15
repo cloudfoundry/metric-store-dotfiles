@@ -20,10 +20,10 @@ if [[ `alacritty --version` = "alacritty $VERSION" ]]; then
     exit
 fi
 
-wget https://github.com/jwilm/alacritty/releases/download/v${VERSION}/Alacritty-v${VERSION}-x86_64.tar.gz
-tar xzf Alacritty-v${VERSION}-x86_64.tar.gz
-rm Alacritty-v${VERSION}-x86_64.tar.gz
-sudo mv alacritty /usr/local/bin
-sudo chmod +x /usr/local/bin/alacritty
-
-echo_installed
+start_install
+  wget https://github.com/jwilm/alacritty/releases/download/v${VERSION}/Alacritty-v${VERSION}-x86_64.tar.gz
+  tar xzf Alacritty-v${VERSION}-x86_64.tar.gz
+  rm Alacritty-v${VERSION}-x86_64.tar.gz
+  sudo mv alacritty /usr/local/bin
+  sudo chmod +x /usr/local/bin/alacritty
+end_install

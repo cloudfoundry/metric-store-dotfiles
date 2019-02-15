@@ -12,16 +12,16 @@ if [[ `rg --version | head -n1` == "ripgrep $VERSION"* ]]; then
     exit
 fi
 
-pushd $HOME/workspace
-  mkdir ripgrep
-  pushd ripgrep
-    wget https://github.com/BurntSushi/ripgrep/archive/$VERSION.zip
-    unzip $VERSION.zip
-    cd ripgrep-$VERSION
-    cargo build --release
-    sudo mv target/release/rg /usr/local/bin
+start_install
+  pushd $HOME/workspace
+    mkdir ripgrep
+    pushd ripgrep
+      wget https://github.com/BurntSushi/ripgrep/archive/$VERSION.zip
+      unzip $VERSION.zip
+      cd ripgrep-$VERSION
+      cargo build --release
+      sudo mv target/release/rg /usr/local/bin
+    popd
+    rm -rf ripgrep
   popd
-  rm -rf ripgrep
-popd
-
-echo_installed
+end_install

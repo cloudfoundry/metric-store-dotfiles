@@ -12,9 +12,9 @@ if [[ `git-duet --version` == $VERSION* ]]; then
     exit
 fi
 
-mkdir -p ~/bin
-wget -O git-duet-$VERSION.tar.gz https://github.com/git-duet/git-duet/releases/download/$VERSION/linux_amd64.tar.gz
-tar xzvf git-duet-$VERSION.tar.gz -C ~/bin/
-rm git-duet-$VERSION.tar.gz
-
-echo_installed
+start_install
+  mkdir -p ~/bin
+  wget -O git-duet-$VERSION.tar.gz https://github.com/git-duet/git-duet/releases/download/$VERSION/linux_amd64.tar.gz
+  tar xzvf git-duet-$VERSION.tar.gz -C ~/bin/
+  rm git-duet-$VERSION.tar.gz
+end_install

@@ -12,7 +12,7 @@ if [[ `openvpn --version | head -1` = "OpenVPN $VERSION "* ]]; then
     exit
 fi
 
-sudo apt-get update
-sudo apt-get install -y openvpn
-
-echo_installed
+start_install
+  sudo apt-get update
+  sudo apt-get install -y openvpn
+end_install

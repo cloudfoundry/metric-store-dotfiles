@@ -14,18 +14,18 @@ if [[ `lpass --version` = "LastPass CLI v$VERSION" ]]; then
     exit
 fi
 
-mkdir -p $HOME/.local/share/lpass
+start_install
+  mkdir -p $HOME/.local/share/lpass
 
-pushd $HOME/workspace
-  mkdir lpass
-  pushd lpass
-    wget https://github.com/lastpass/lastpass-cli/releases/download/v$VERSION/$FILE
-    tar -xzf $FILE
-    cd lastpass-cli-$VERSION
-    make
-    sudo make install
+  pushd $HOME/workspace
+    mkdir lpass
+    pushd lpass
+      wget https://github.com/lastpass/lastpass-cli/releases/download/v$VERSION/$FILE
+      tar -xzf $FILE
+      cd lastpass-cli-$VERSION
+      make
+      sudo make install
+    popd
+    rm -rf lpass
   popd
-  rm -rf lpass
-popd
-
-echo_installed
+end_install

@@ -13,8 +13,8 @@ if [[ `bosh --version` = "version $VERSION-"* ]]; then
     exit
 fi
 
-wget https://s3.amazonaws.com/bosh-cli-artifacts/$FILE
-chmod +x $FILE
-sudo mv $FILE /usr/local/bin/bosh
-
-echo_installed
+start_install
+  wget https://s3.amazonaws.com/bosh-cli-artifacts/$FILE
+  chmod +x $FILE
+  sudo mv $FILE /usr/local/bin/bosh
+end_install
