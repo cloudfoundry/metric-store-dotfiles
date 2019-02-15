@@ -16,15 +16,21 @@ YELLOW="$ESC[${DULL};${FG_YELLOW}m"
 BRIGHT_RED="$ESC[${BRIGHT};${FG_RED}m"
 
 echo_red() {
+  set +x
   printf "\n${YELLOW}lc> ${BRIGHT_RED}%b${RESET}" "$1"
+  set -x
 }
 
 echo_green() {
+  set +x
   printf "\n${YELLOW}lc> ${GREEN}%b${RESET}" "$1"
+  set -x
 }
 
 echo_normal() {
+  set +x
   printf "\n${YELLOW}lc> %b${RESET}" "$1"
+  set -x
 }
 
 echo_header() {
@@ -56,13 +62,17 @@ echo_installed() {
 }
 
 within_temp_dir() {
+  set +x
   pushd $HOME/workspace
   mkdir ${APP}
   pushd ${APP}
+  set -x
 }
 
 end_temp_dir() {
+  set +x
   popd
   rm -rf ${APP}
   popd
+  set -x
 }
