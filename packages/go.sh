@@ -3,7 +3,7 @@
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 APP="go"
-VERSION=1.11.4
+VERSION=1.11.5
 
 echo_installing
 
