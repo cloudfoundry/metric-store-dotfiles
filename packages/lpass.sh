@@ -9,7 +9,6 @@ FILE=lastpass-cli-$VERSION.tar.gz
 echo_installing
 
 if [[ `lpass --version` = "LastPass CLI v$VERSION" ]]; then
-    echo "Looks like lpass $VERSION is already installed, skipping..."
     echo_already_installed
     exit
 fi

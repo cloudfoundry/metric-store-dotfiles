@@ -4,7 +4,7 @@
 
 APP="git-hooks"
 
-echo_header "Installing git-hooks"
+echo_installing
 
 start_install
   HOOK=$(pwd)/assets/git-hooks/no-push-master
