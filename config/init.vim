@@ -82,6 +82,11 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 
 "-----------------------------------------------------------------------------
+" SH CONFIG
+"-----------------------------------------------------------------------------
+autocmd FileType sh setlocal expandtab shiftwidth=2 tabstop=2
+
+"-----------------------------------------------------------------------------
 " TEXT CONFIG
 "-----------------------------------------------------------------------------
 autocmd FileType markdown setlocal formatoptions+=t
