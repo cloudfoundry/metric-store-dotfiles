@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="chruby"
-VERSION=0.3.9
-
-echo_installing
+identify_package "chruby" 0.3.9
 
 if [[ `chruby-exec --version` = "chruby version $VERSION" ]]; then
     echo_already_installed

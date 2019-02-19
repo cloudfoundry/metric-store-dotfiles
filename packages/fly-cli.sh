@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="fly"
-VERSION=3.14.1
-
-echo_installing
+identify_package "fly" 3.14.1
 
 if [[ `fly --version` = "$VERSION" ]]; then
     echo_already_installed

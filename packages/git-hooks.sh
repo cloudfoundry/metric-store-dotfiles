@@ -2,9 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="git-hooks"
-
-echo_installing
+identify_package "git-hooks" "latest"
 
 start_install
   HOOK=$(pwd)/assets/git-hooks/no-push-master

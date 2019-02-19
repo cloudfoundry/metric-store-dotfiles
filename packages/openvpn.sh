@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="openvpn"
-VERSION="2.4.4"
-
-echo_installing
+identify_package "openvpn" "2.4.4"
 
 if [[ `openvpn --version | head -1` = "OpenVPN $VERSION "* ]]; then
     echo_already_installed

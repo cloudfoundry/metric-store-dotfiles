@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="ripgrep"
-VERSION=0.10.0
-
-echo_installing
+identify_package "ripgrep" 0.10.0
 
 if [[ `rg --version | head -n1` == "ripgrep $VERSION"* ]]; then
     echo_already_installed

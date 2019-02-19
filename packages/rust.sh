@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="rust"
-VERSION="latest"
-
-echo_installing
+identify_package "rust" "latest"
 
 start_install
   if [[ -e $HOME/.cargo/bin/rustup ]]; then

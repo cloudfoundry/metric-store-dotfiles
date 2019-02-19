@@ -2,11 +2,8 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="protobuf"
-VERSION=3.6.1
+identify_package "protobuf" 3.6.1
 FILE=protoc-$VERSION-linux-x86_64.zip
-
-echo_installing
 
 if [[ `protoc --version` = "libprotoc $VERSION" ]]; then
     echo_already_installed

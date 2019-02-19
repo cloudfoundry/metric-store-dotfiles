@@ -2,11 +2,8 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="bosh"
-VERSION=5.4.0
+identify_package "bosh" 5.4.0
 FILE=bosh-cli-$VERSION-linux-amd64
-
-echo_installing
 
 if [[ `bosh --version` = "version $VERSION-"* ]]; then
     echo_already_installed

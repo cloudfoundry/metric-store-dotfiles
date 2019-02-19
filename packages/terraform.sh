@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="terraform"
-VERSION=0.11.11
-
-echo_installing
+identify_package "terraform" 0.11.11
 
 if [[ `terraform version` = "Terraform v$VERSION" ]]; then
     echo_already_installed

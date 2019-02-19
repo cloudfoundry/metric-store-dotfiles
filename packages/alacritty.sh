@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="Alacritty"
-VERSION=0.2.9
-
-echo_installing
+identify_package "Alacritty" 0.2.9
 
 /bin/ps -auxw | /bin/grep " alacritty" | grep -q -v grep
 is_alacritty_running=$?

@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="Gcloud"
-VERSION=234.0.0
-
-echo_installing
+identify_package "gcloud" 234.0.0
 
 if [[ `gcloud --version | head -1` = "Google Cloud SDK $VERSION" ]]; then
     echo_already_installed

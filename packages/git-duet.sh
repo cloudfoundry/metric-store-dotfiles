@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="git-duet"
-VERSION=0.6.0
-
-echo_installing
+identify_package "git-duet" 0.6.0
 
 if [[ `git-duet --version` == $VERSION* ]]; then
     echo_already_installed

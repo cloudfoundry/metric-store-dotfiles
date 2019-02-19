@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="bbl"
-VERSION=6.10.3
-
-echo_installing
+identify_package "bbl" 6.10.3
 
 if [[ `bbl version` = "bbl $VERSION "* ]]; then
     echo_already_installed

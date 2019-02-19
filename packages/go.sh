@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="go"
-VERSION=1.11.5
-
-echo_installing
+identify_package "go" 1.11.5
 
 if [[ `go version` = "go version go$VERSION "* ]]; then
     echo_already_installed

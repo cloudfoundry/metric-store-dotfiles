@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="ruby-install"
-VERSION=0.7.0
-
-echo_installing
+identify_package "ruby-install" 0.7.0
 
 if [[ `ruby-install --version` = "ruby-install: $VERSION" ]]; then
     echo_already_installed

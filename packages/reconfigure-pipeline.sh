@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="reconfigure-pipeline"
-VERSION=0.22.0
-
-echo_installing
+identify_package "reconfigure-pipeline" 0.22.0
 
 if [ -f /usr/local/share/reconfigure-pipeline-$VERSION ]; then
     echo_already_installed

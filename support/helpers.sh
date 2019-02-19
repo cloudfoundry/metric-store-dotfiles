@@ -67,6 +67,13 @@ end_temp_dir() {
   popd
 }
 
+identify_package() {
+  APP=$1
+  VERSION=$2
+
+  echo_installing
+}
+
 start_install() {
     set -x
 }

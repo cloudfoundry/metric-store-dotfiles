@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="NeoVim"
-VERSION=0.4.0
-
-echo_installing
+identify_package "NeoVim" 0.4.0
 
 if [[ `nvim --version | head -1` = "NVIM v$VERSION" ]]; then
     echo_already_installed

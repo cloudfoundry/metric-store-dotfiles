@@ -2,10 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="cf-cli"
-VERSION=6.42.0
-
-echo_installing
+identify_package "cf-cli" 6.42.0
 
 if [[ `cf version` = "cf version $VERSION"* ]]; then
     echo_already_installed

@@ -2,11 +2,8 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-APP="ssoca"
-VERSION=0.13.0
+identify_package "ssoca" 0.13.0
 SHASUM="dc7b1fd99932e1164c786a01c87707eccb5ff80dfdcc6c3f41eacafc06149a08"
-
-echo_installing
 
 if [[ `ssoca version` = "ssoca-client/$VERSION "* ]]; then
     echo_already_installed
