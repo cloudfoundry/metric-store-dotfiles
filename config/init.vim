@@ -19,7 +19,6 @@ Plug 'tpope/vim-abolish'           " easily search for, substitute, and abbrevia
 Plug 'fatih/vim-go'                " Helpful plugin for Golang dev
 Plug 'AndrewRadev/splitjoin.vim'   " Enable vim-go to split structs into multi lines
 Plug 'vim-scripts/bufkill.vim'     " Kill buffers and leave windows intact
-Plug 'ervandew/supertab'           " Perform all completions with Tab
 Plug 'scrooloose/nerdtree'         " Directory tree explorer
 Plug 'gaving/vim-textobj-argument' " Function arguments as text objects
 Plug 'vim-airline/vim-airline'     " Status line improvements
@@ -183,9 +182,9 @@ highlight NonText ctermfg=239
 highlight SpecialKey ctermfg=239
 
 "------------------------------------------------------------------------------
-" supertab config
+" tab config
 "------------------------------------------------------------------------------
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+inoremap <tab> <c-n>
 
 "------------------------------------------------------------------------------
 " BEHAVIOR
