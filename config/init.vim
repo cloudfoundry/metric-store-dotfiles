@@ -32,6 +32,7 @@ Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
 Plug 'tpope/vim-repeat'            " properly repeat plugin commands
 Plug 'w0rp/ale'                    " asynchronous linting
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 call plug#end()                    " Complete vim-plug initialization
 
@@ -157,6 +158,9 @@ endfunction
 " Autocomplete
 "-----------------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/githucom/stamblerre/gocode/'
+set completeopt-=preview
+call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
 "------------------------------------------------------------------------------
 " APPEARANCE
