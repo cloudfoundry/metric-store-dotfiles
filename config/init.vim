@@ -35,6 +35,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'sebdah/vim-delve'
 
 call plug#end()                    " Complete vim-plug initialization
 
@@ -223,7 +224,7 @@ nmap <silent> [H :call PrevHunkAllBuffers()<CR>
 " Autocomplete
 "-----------------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/githucom/stamblerre/gocode/'
+let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/github.com/stamblerre/gocode/*'
 set completeopt-=preview
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
@@ -358,6 +359,10 @@ autocmd FileType go nmap <leader>M :GoImpl<Space>
 autocmd FileType go nnoremap <leader>n :GoRename<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-referrers)
 autocmd FileType go nnoremap <leader>t :wa<CR>:!clear;ulimit -Sn unlimited; go test -v %:p:h \| perl -pe 's/\e\[?.*?[\@-~]//g'<CR>
+
+" delve command shortcuts
+autocmd FileType go nmap <leader>o :DlvToggleBreakpoint<CR>
+autocmd FileType go nmap <leader>p :DlvTest<CR>
 
 " reselect when indenting
 vnoremap < <gv
