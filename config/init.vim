@@ -33,6 +33,8 @@ Plug 'tpope/vim-repeat'            " properly repeat plugin commands
 Plug 'w0rp/ale'                    " asynchronous linting
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()                    " Complete vim-plug initialization
 
@@ -162,6 +164,11 @@ let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/githucom/stamblerr
 set completeopt-=preview
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
+"-----------------------------------------------------------------------------
+" Snippets
+"-----------------------------------------------------------------------------
+let g:neosnippet#snippets_directory='~/workspace/log-cache-dotfiles/config/snippets'
+
 "------------------------------------------------------------------------------
 " APPEARANCE
 "------------------------------------------------------------------------------
@@ -231,6 +238,17 @@ set smarttab
 autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 expandtab
 " Include - in word text objects, * command
 autocmd Filetype yaml setlocal iskeyword+=-
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-q>     <Plug>(neosnippet_expand_or_jump)
+smap <C-q>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-q>     <Plug>(neosnippet_expand_target)
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "------------------------------------------------------------------------------
 " LEADER MAPPINGS
