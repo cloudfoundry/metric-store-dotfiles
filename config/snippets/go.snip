@@ -1,0 +1,11 @@
+snippet it
+alias It
+    It("${1}", func() {
+    })
+
+snippet desc
+alias Desc Describe describe
+    Describe("${1}", func() {
+        It("${2}", func() {
+        })
+    })
