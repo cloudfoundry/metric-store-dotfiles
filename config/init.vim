@@ -228,6 +228,8 @@ let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/github.com/stamble
 set completeopt-=preview
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 "-----------------------------------------------------------------------------
 " Snippets
 "-----------------------------------------------------------------------------
