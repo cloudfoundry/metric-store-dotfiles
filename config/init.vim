@@ -332,6 +332,9 @@ nmap <silent> <leader>ee :source $MYVIMRC<cr>
 " clear the search buffer when hitting space
 nnoremap <space> :nohlsearch<cr>
 
+" reload .vimrc
+map <leader>rv :source ~/.vimrc<CR>
+
 " sometimes I hold the shift too long ... just allow it
 cabbrev W w
 cabbrev Wa wa
