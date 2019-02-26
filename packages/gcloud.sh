@@ -11,10 +11,10 @@ fi
 
 start_install
   wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${VERSION}-linux-x86_64.tar.gz -O google-cloud-sdk.tar.gz
-  tar xzvf google-cloud-sdk.tar.gz -C /usr/local/share
-  /usr/local/share/google-cloud-sdk/install.sh
-  ln -s /usr/local/share/google-cloud-sdk/bin/gcloud /usr/local/bin/gcloud
-  ln -s /usr/local/share/google-cloud-sdk/bin/gsutil /usr/local/bin/gsutil
+  sudo tar xzvf google-cloud-sdk.tar.gz -C /usr/local/share
+  sudo /usr/local/share/google-cloud-sdk/install.sh
+  sudo ln -sf /usr/local/share/google-cloud-sdk/bin/gcloud /usr/local/bin/gcloud
+  sudo ln -sf /usr/local/share/google-cloud-sdk/bin/gsutil /usr/local/bin/gsutil
   rm google-cloud-sdk.tar.gz
   sudo chown pivotal: -R ~/.config/gcloud
 end_install
