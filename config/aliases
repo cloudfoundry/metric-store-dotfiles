@@ -5,6 +5,7 @@ alias gpr="git pull --rebase"
 alias gpp="git pull --rebase && git push"
 alias gs="git status"
 alias gst="git status"
+alias gl="git log --graph --oneline"
 
 # system
 alias ll="ls -la"
