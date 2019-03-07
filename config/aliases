@@ -35,8 +35,8 @@ alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; t
 alias msr="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
 alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-store; tmux_try_rename 'ms'"
 
-alias osmsr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmsr'"
-alias osms="cd ~/workspace/oss/metric-store-release/src/github.com/cloudfoundry/metric-store; tmux_try_rename 'osms'"
+alias osmr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmr'"
+alias osm="cd ~/workspace/oss/metric-store-release/src/github.com/cloudfoundry/metric-store; tmux_try_rename 'osm'"
 
 # quick logins
 alias login='./cf_login'
