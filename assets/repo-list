@@ -15,3 +15,5 @@ cloudfoundry-incubator/loggregator-tools
 pivotal-cf/denver-bash-it
 pivotal-cf/denver-deployments
 pivotal-cf/denver-locks
+pivotal/metric-store-release
+pivotal/metric-store
