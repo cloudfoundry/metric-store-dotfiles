@@ -45,6 +45,7 @@ alias prod_target='target_prod'
 
 # wrappers
 alias vim='nvim'
+alias mvim='nvim'
 
 # Makes ./ work to reference the current package, e.g.,
 # `gomvpkg -from ./foo -to ./bar`
