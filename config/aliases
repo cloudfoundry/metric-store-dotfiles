@@ -33,10 +33,10 @@ alias lct="cd ~/workspace/log-cache-tools; tmux_try_rename 'lc-tools'"
 alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
 alias msr="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
-alias ms="cd ~/workspace/metric-store-release/src/github.com/pivotal/metric-store; tmux_try_rename 'ms'"
+alias ms="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
 
 alias osmr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmr'"
-alias osm="cd ~/workspace/oss/metric-store-release/src/github.com/cloudfoundry/metric-store; tmux_try_rename 'osm'"
+alias osm="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmr'"
 
 # quick logins
 alias login='./cf_login'
