@@ -47,6 +47,9 @@ alias prod_target='target_prod'
 alias vim='nvim'
 alias mvim='nvim'
 
+# tools
+alias run_msats='~/workspace/log-cache-dotfiles/tools/run-oss-msats-against-yuzu.sh'
+
 # Makes ./ work to reference the current package, e.g.,
 # `gomvpkg -from ./foo -to ./bar`
 function gomvpkg {
