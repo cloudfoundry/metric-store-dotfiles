@@ -228,7 +228,26 @@ let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/github.com/stamble
 set completeopt-=preview
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+" <CR>: choose completion and close popup.
+inoremap <silent><expr> <CR> pumvisible() ? <SID>my_cr_function() : "\<CR>"
+function! s:my_cr_function() abort
+  return deoplete#close_popup()
+endfunction
+
+" <>: choose completion and close popup.
+inoremap <silent><expr> <space> pumvisible() ? <SID>my_space_function() : "\<space>"
+function! s:my_space_function() abort
+  return deoplete#close_popup() . " "
+endfunction
 
 "-----------------------------------------------------------------------------
 " Snippets
@@ -257,11 +276,6 @@ set list                " enable display of invisible characters
 " invisible character colors
 highlight NonText ctermfg=239
 highlight SpecialKey ctermfg=239
-
-"------------------------------------------------------------------------------
-" tab config
-"------------------------------------------------------------------------------
-inoremap <tab> <c-n>
 
 "------------------------------------------------------------------------------
 " BEHAVIOR
