@@ -29,6 +29,8 @@ On OS X
 ./install-on-osx.sh
 ```
 
+Run `:PlugInstall` in vim
+
 ## Contributing
 
 Want to make changes or add new packages? Just push up a branch and open a PR.

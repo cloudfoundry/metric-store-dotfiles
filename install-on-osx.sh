@@ -21,6 +21,7 @@ brew update
 
 echo_step "install dependencies"
 brew bundle --file=- <<-EOS
+brew "python2"
 brew "python3"
 brew "jq"
 brew "zsh"
@@ -40,6 +41,9 @@ brew "rcm"
 brew "neovim"
 brew "lastpass-cli"
 EOS
+
+pip2 install --upgrade pynvim
+pip3 install --upgrade pynvim
 
 # Not Installed, but present on linux install:
 # openssh-server python3-pip libxml2-dev libcurl4-gnutls-dev gnome-tweak-tool
