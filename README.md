@@ -8,6 +8,7 @@ distros:
 
 * Ubuntu 18.04 LTS
 * Mint 18.2
+* OS X Sierra (separate script)
 
 ## Prerequisites
 
@@ -18,8 +19,14 @@ the team repos (located in `assets/repo-list`).
 
 To link the dotfiles and install system-level packages, just run:
 
-```
+```bash
 ./install.sh
+```
+
+On OS X
+
+```bash
+./install-on-osx.sh
 ```
 
 ## Contributing
