@@ -5,7 +5,7 @@ CHANNEL="log-cache-stdout"
 USERNAME=$(hostname)
 LASTIPFILE='/home/pivotal/.last_ip_address'
 
-MYIP=$(hostname -I | tr -d '[:space:]')
+MYIP=$(hostname -I | cut -d' ' -f1 | tr -d '[:space:]')
 LASTIP=$(cat ${LASTIPFILE})
 
 if [[ ${MYIP} != ${LASTIP} ]]; then
