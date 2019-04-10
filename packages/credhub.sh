@@ -2,7 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-identify_package "credhub" 2.0.0
+identify_package "credhub" 2.4.0
 
 if [[ `credhub --version | head -n1` = "CLI Version: $VERSION" ]]; then
     echo_already_installed
