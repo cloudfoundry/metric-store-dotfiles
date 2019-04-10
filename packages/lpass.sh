@@ -2,7 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-identify_package "LastPass CLI" 1.3.1
+identify_package "LastPass CLI" 1.3.2
 FILE=lastpass-cli-$VERSION.tar.gz
 
 if [[ `lpass --version` = "LastPass CLI v$VERSION" ]]; then
