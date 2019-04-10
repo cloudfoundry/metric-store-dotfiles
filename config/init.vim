@@ -228,14 +228,11 @@ let g:deoplete#sources#go#gocode_binary = '~/workspace/go/src/github.com/stamble
 set completeopt-=preview
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+" <TAB>: choose completion and close popup.
+inoremap <silent><expr> <TAB> pumvisible() ? <SID>my_tab_function() : "\<TAB>"
+function! s:my_tab_function() abort
+  return deoplete#close_popup() . "\<TAB>"
+endfunction
 
 " <CR>: choose completion and close popup.
 inoremap <silent><expr> <CR> pumvisible() ? <SID>my_cr_function() : "\<CR>"
