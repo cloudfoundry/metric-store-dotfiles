@@ -40,6 +40,9 @@ tap  "thoughtbot/formulae"
 brew "rcm"
 brew "neovim"
 brew "lastpass-cli"
+tap "cloudfoundry/tap"
+brew "bosh-cli"
+brew "bbl"
 EOS
 
 pip2 install --upgrade pynvim
