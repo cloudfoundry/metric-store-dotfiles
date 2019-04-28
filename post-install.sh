@@ -15,4 +15,8 @@ echo_header "Installing yq"
   pip3 install yq
 echo_footer "yq installed"
 
+echo_header "Installing pynvim"
+  pip3 install --user --upgrade pynvim
+echo_footer "pynvim installed"
+
 ~/workspace/log-cache-dotfiles/post-install-office.sh
