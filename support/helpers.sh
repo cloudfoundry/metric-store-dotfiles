@@ -44,7 +44,7 @@ echo_footer() {
 }
 
 echo_installing() {
-  echo_header "Installing ${APP} ${VERSION}"
+  echo_header "Installing ${APP}"
 }
 
 echo_already_installed() {
@@ -67,16 +67,42 @@ end_temp_dir() {
   popd
 }
 
+
+
+# As a developer,
+# When I run install.sh
+# Then my packages update to latest release version
+
+
+# As a developer,
+# When I run install_on_osx.sh
+# Then my packages update to latest release version
+# Even if they were installed with brew
+
+
 identify_package() {
   APP=$1
-  VERSION=$2
 
-  echo `which $APP` version
-  # if this fails try --version
-  echo `which $APP` --version
-  # parse output for a semver
-  # set that to VERSION
+  which $APP
+  status=$?
 
+  if [ $status -ne 0 ]; then
+    VERSION=0
+  else
+    version=`$APP version`
+
+    status=$?
+    if [ $status -ne 0 ]; then
+      version=`$APP --version`
+    fi
+
+    if [ -z "$version" ]; then
+      echo "Exiting due to lack of attainable version for $APP"
+      exit 2
+    fi
+  fi
+
+  VERSION=`echo "$version" | egrep -o '([0-9]+\.){2}([0-9]+)'`
   echo_installing
 }
 
@@ -98,7 +124,7 @@ install_latest_version() {
   latest=`curl -sS https://api.github.com/repos/${github_src}/releases/latest`
   latest_version=`echo "$latest" | awk '/tag_name/ {print $2}' | tr -d \",v`
 
-  if [ $VERSION = $latest_version ]; then
+  if [ "$VERSION" = "$latest_version" ]; then
     echo_already_installed
     exit
   fi
@@ -112,14 +138,16 @@ install_latest_version() {
 
    if [ $status -ne 0 ]; then
      echo Failed to fetch "$latest_download_link"
-     exit
+     exit 3
    fi
 
-  name="$APP-$VERSION"
-  sudo rm /usr/local/share/$APP-*
+  name="$APP-$latest_version"
+  sudo rm -f /usr/local/share/$APP-*
   sudo mv -f $filename /usr/local/share/$name
   sudo chmod +x /usr/local/share/$name
   ln -sf /usr/local/share/$name /usr/local/bin/$APP
+
+  VERSION="$latest_version"
 
   echo_installed
 }

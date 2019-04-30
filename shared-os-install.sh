@@ -21,6 +21,7 @@ popd
 rm -rf fonts
 echo_footer "fonts installed"
 
+# TODO: maybe remove to just Linux
 PACKAGES=`ls -d packages/*.sh`
 for package in $PACKAGES
 do
