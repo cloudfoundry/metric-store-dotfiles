@@ -15,6 +15,6 @@ start_install
   tar -xzvf reconfigure-pipeline-$VERSION.tar.gz
   sudo mv reconfigure-pipeline /usr/local/share/reconfigure-pipeline-$VERSION
   sudo chmod +x /usr/local/share/reconfigure-pipeline-$VERSION
-  ln -s /usr/local/share/reconfigure-pipeline-$VERSION /usr/local/bin/reconfigure-pipeline
+  sudo ln -sf /usr/local/share/reconfigure-pipeline-$VERSION /usr/local/bin/reconfigure-pipeline
   rm reconfigure-pipeline-$VERSION.tar.gz
 end_install
