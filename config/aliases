@@ -16,6 +16,7 @@ alias blc='bosh -e lite -d cf'
 alias python='python3'
 alias pip='pip3'
 alias flyl='fly -t log-cache'
+alias flyd='fly -t cf-denver'
 alias flyp='fly -t prod'
 
 # projects
