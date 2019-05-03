@@ -128,3 +128,7 @@ if [ -f '/usr/local/share/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/share/google-cloud-sdk/completion.bash.inc' ]; then . '/usr/local/share/google-cloud-sdk/completion.bash.inc'; fi
+
+# for chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+

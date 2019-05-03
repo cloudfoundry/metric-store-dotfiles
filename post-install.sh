@@ -3,8 +3,8 @@
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 echo_header "Installing Ruby"
-  ruby-install --no-reinstall ruby-2.4.5
-  chruby ruby-2.4.5
+  ruby-install --no-reinstall ruby-2.6.2
+  chruby ruby-2.6.2
 echo_footer "ruby installed"
 
 echo_header "Installing cf-uaac"

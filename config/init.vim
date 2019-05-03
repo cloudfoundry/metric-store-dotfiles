@@ -36,6 +36,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'sebdah/vim-delve'
+Plug 'previm/previm'               " preview for markdown, mermaid, etc.
 
 call plug#end()                    " Complete vim-plug initialization
 
@@ -250,6 +251,12 @@ endfunction
 " Snippets
 "-----------------------------------------------------------------------------
 let g:neosnippet#snippets_directory='~/workspace/log-cache-dotfiles/config/snippets'
+
+
+"-----------------------------------------------------------------------------
+" PreVim config
+"-----------------------------------------------------------------------------
+let g:previm_open_cmd = 'open -a "Google Chrome"'
 
 "------------------------------------------------------------------------------
 " APPEARANCE

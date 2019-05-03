@@ -25,4 +25,11 @@ sudo apt install -y libcurl4 libcurl4-openssl-dev libssl1.1 libssl-dev
 
 echo_footer "finished apt-get"
 
+PACKAGES=`ls -d packages/*.sh`
+for package in $PACKAGES
+do
+  echo "Running $package"
+  $package
+done;
+
 ./shared-os-install.sh

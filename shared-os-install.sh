@@ -21,13 +21,6 @@ popd
 rm -rf fonts
 echo_footer "fonts installed"
 
-PACKAGES=`ls -d packages/*.sh`
-for package in $PACKAGES
-do
-  echo "Running $package"
-  $package
-done;
-
 echo_header "testing fly"
 if [[ `fly -t log-cache status` = "logged out" ]]; then
     fly -t log-cache login -c https://log-cache.ci.cf-app.com
