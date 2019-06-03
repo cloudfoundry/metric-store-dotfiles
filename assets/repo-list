@@ -16,3 +16,6 @@ pivotal-cf/denver-bash-it
 pivotal-cf/denver-deployments
 pivotal-cf/denver-locks
 pivotal/metric-store-release
+pivotal/metric-store-release.wiki
+pivotal-cf/docs-metric-store
+pivotal-cf/docs-book-metric-store
