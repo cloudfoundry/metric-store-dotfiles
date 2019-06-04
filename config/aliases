@@ -39,6 +39,10 @@ alias ms="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
 alias osmr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmr'"
 alias osm="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmr'"
 
+alias docs="cd ~/workspace/docs-metric-store; tmux_try_rename 'docs'"
+alias book="cd ~/workspace/docs-book-metric-store; tmux_try_rename 'book'"
+alias wiki="cd ~/workspace/metric-store-release.wiki; tmux_try_rename 'wiki'"
+
 # quick logins
 alias login='./cf_login'
 alias pws='cf login -a api.run.pivotal.io -u cf-log-cache@pivotal.io'
