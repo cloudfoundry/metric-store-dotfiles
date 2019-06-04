@@ -3,7 +3,7 @@ msq() {
     stdout_tmpfile=$(mktemp)
 
     url="https://metric-store.${BOSH_ENV_NAME}.cf-denver.com/api/v1/query"
-    stderr_output=$(curl -H "Authorization: $(cf oauth-token)" -sS -G ${url} \
+    stderr_output=$(curl -k -H "Authorization: $(cf oauth-token)" -sS -G ${url} \
         --data-urlencode query=${1} > ${stdout_tmpfile} 2>&1)
     curl_status=$?
 

@@ -52,6 +52,8 @@ alias prod_target='target_prod'
 alias vim='nvim'
 alias mvim='nvim'
 
+alias pbcopy='DISPLAY=:1 xclip -selection c'
+
 # tools
 alias run_msats='~/workspace/log-cache-dotfiles/tools/run-oss-msats-against-yuzu.sh'
 
