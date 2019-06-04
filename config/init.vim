@@ -38,6 +38,8 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'sebdah/vim-delve'
 Plug 'previm/previm'               " preview for markdown, mermaid, etc.
 
+Plug 'sjl/gundo.vim'
+
 call plug#end()                    " Complete vim-plug initialization
 
 " detect file type, turn on that type's plugins and indent preferences
