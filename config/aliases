@@ -33,6 +33,7 @@ alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/github.com/cl
 alias lct="cd ~/workspace/log-cache-tools; tmux_try_rename 'lc-tools'"
 alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
+alias mci="cd ~/workspace/metric-store-ci; tmux_try_rename 'CI'"
 alias msr="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
 alias ms="cd ~/workspace/metric-store-release; tmux_try_rename 'msr'"
 
