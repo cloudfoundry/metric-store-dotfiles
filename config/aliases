@@ -15,21 +15,14 @@ alias nocaps='/usr/bin/setxkbmap -layout us -option ctrl:nocaps'
 alias blc='bosh -e lite -d cf'
 alias python='python3'
 alias pip='pip3'
-alias flyl='fly -t log-cache'
-alias flyd='fly -t cf-denver'
-alias flyp='fly -t prod'
+alias flyd='fly -t cf-denver -n metric-store-log-cache'
+alias flyp='fly -t pws -n pcf-observability'
 
 # projects
-alias glc="cd ~/workspace/go-log-cache; tmux_try_rename 'go-lc'"
 alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
-alias lcr="cd ~/workspace/log-cache-release; tmux_try_rename 'lcr'"
-alias lc="cd ~/workspace/log-cache-release/src/code.cloudfoundry.org/log-cache; tmux_try_rename 'lc'"
 alias lcd="cd ~/workspace/log-cache-deployments; tmux_try_rename 'lcd'"
-alias ci="cd ~/workspace/log-cache-ci; tmux_try_rename 'CI'"
-alias lci="cd ~/workspace/log-cache-ci; tmux_try_rename 'CI'"
-alias lcli="cd ~/workspace/log-cache-cli; tmux_try_rename 'lc-cli'"
-alias lcatsr="cd ~/workspace/log-cache-acceptance-tests-release; tmux_try_rename 'lcats release'"
-alias lcats="cd ~/workspace/log-cache-acceptance-tests-release/src/github.com/cloudfoundry/log-cache-acceptance-tests; tmux_try_rename 'lcats'"
+alias ci="cd ~/workspace/metric-store-ci; tmux_try_rename 'CI'"
+alias lci="cd ~/workspace/metric-store-ci; tmux_try_rename 'CI'"
 alias lct="cd ~/workspace/log-cache-tools; tmux_try_rename 'lc-tools'"
 alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
@@ -42,7 +35,6 @@ alias osm="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'osmr'"
 
 alias docs="cd ~/workspace/docs-metric-store; tmux_try_rename 'docs'"
 alias book="cd ~/workspace/docs-book-metric-store; tmux_try_rename 'book'"
-alias wiki="cd ~/workspace/metric-store-release.wiki; tmux_try_rename 'wiki'"
 
 # quick logins
 alias login='./cf_login'
