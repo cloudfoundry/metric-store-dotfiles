@@ -15,8 +15,8 @@ alias nocaps='/usr/bin/setxkbmap -layout us -option ctrl:nocaps'
 alias blc='bosh -e lite -d cf'
 alias python='python3'
 alias pip='pip3'
-alias flyd='fly -t cf-denver -n metric-store-log-cache'
-alias flyp='fly -t pws -n pcf-observability'
+alias flyd='fly -t cf-denver'
+alias flyp='fly -t pws'
 
 # projects
 alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
