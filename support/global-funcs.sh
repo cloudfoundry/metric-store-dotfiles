@@ -95,7 +95,7 @@ EOF
 
     ssoca -e pws-prod env set https://ssoca-vpn.run.pivotal.io
     ssoca -e pws-prod auth login
-    ssoca -e pws-prod openvpn exec --sudo >/tmp/ssoca.log 2>&1 &
+    ssoca -e pws-prod openvpn exec --sudo --static-certificate >/tmp/ssoca.log 2>&1 &
     SSOCA_PID=$!
     trap "cleanup_prod ${SSOCA_PID} ${current_window_name}" EXIT
 
