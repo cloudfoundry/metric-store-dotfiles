@@ -2,7 +2,7 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-identify_package "go" 1.12.10
+identify_package "go" 1.13.1
 
 if [[ `go version` = "go version go$VERSION "* ]]; then
     echo_already_installed
@@ -11,7 +11,7 @@ fi
 
 if [ "$(uname)" == "Darwin" ]; then
 brew bundle --file=- <<-EOS
-  brew "go@1.12"
+  brew "go@1.13"
 EOS
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   start_install
