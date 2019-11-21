@@ -2,8 +2,8 @@
 
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
-identify_package "ssoca" 0.13.0
-SHASUM="dc7b1fd99932e1164c786a01c87707eccb5ff80dfdcc6c3f41eacafc06149a08"
+identify_package "ssoca" 0.18.1
+SHASUM="379b1adcade7124cdbefa8d0e26337f33a3ec1e8e35ffb194a5c2ab3d94b5f3b"
 
 if [[ `ssoca version` = "ssoca-client/$VERSION "* ]]; then
     echo_already_installed
@@ -11,7 +11,7 @@ if [[ `ssoca version` = "ssoca-client/$VERSION "* ]]; then
 fi
 
 start_install
-  wget -O /usr/local/bin/${APP} https://s3-external-1.amazonaws.com/dpb587-ssoca-us-east-1/artifacts/v${VERSION}/ab7b8de0878b8b70664748a01d1f4742c634944e
+  wget -O /usr/local/bin/${APP} https://github.com/dpb587/ssoca/releases/download/v${VERSION}/ssoca-client-${VERSION}-linux-amd64
   echo "${SHASUM}  /usr/local/bin/${APP}" | shasum -c -
 
   chmod +x /usr/local/bin/${APP}
