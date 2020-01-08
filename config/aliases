@@ -44,6 +44,7 @@ alias prod_target='target_prod'
 # wrappers
 alias vim='nvim'
 alias mvim='nvim'
+alias nvim='/usr/bin/nvim'
 
 alias pbcopy='DISPLAY=:1 xclip -selection c'
 
