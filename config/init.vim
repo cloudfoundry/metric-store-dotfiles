@@ -362,6 +362,8 @@ cabbrev Q q
 cabbrev Qa qa
 cabbrev Tabe tabe
 
+inoremap jj <Esc>
+
 nnoremap <silent> <leader>a :call AgGrep()<CR>
 vnoremap <silent> <leader>a :call AgVisual()<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
