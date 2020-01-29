@@ -232,7 +232,7 @@ set completeopt-=preview
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
 " <TAB>: choose completion and close popup.
-inoremap <silent><expr> <TAB> pumvisible() ? <SID>my_tab_function() : "\<TAB>"
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 function! s:my_tab_function() abort
   return deoplete#close_popup() . "\<TAB>"
 endfunction
