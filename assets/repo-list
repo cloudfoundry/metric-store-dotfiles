@@ -1,7 +1,7 @@
-cloudfoundry/log-cache-deployments
 cloudfoundry/log-cache-dotfiles
 cloudfoundry/loggregator-release
 cloudfoundry/go-loggregator
+cloudfoundry/metric-store-deployments
 pivotal-cf/denver-bash-it
 pivotal-cf/denver-deployments
 pivotal-cf/denver-locks
