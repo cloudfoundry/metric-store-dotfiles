@@ -19,6 +19,7 @@
   lol="log --graph --decorate --oneline"
   lola="log --graph --decorate --oneline --all"
   p="pull --rebase --autostash"
+  root="rev-parse --show-toplevel"
   rum="rebase master@{u}"
   shove="push -f"
   squash="commit --squash"
