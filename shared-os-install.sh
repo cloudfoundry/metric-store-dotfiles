@@ -22,8 +22,8 @@ rm -rf fonts
 echo_footer "fonts installed"
 
 echo_header "testing fly"
-if [[ `fly -t log-cache status` = "logged out" ]]; then
-    fly -t log-cache login -c https://log-cache.ci.cf-app.com
+if [[ `fly -t cf-denver status` != "logged in successfully" ]]; then
+    fly -t cf-denver login -c https://concourse.cf-denver.com
 fi
 echo_footer "fly tested"
 
