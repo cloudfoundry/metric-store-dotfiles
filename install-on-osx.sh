@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 echo_header "Homebrew 🍺"
@@ -17,7 +15,6 @@ fi
 echo_step "update"
 
 brew update
-
 
 echo_step "install dependencies"
 brew bundle --file=- <<-EOS
@@ -70,7 +67,6 @@ brew "om"
 
 EOS
 
-pip2 install --upgrade pynvim
 pip3 install --upgrade pynvim
 
 # Not Installed, but present on linux install:
@@ -80,5 +76,11 @@ pip3 install --upgrade pynvim
 # TODO: install reconfigure-pipeline
 
 echo_footer "finished Homebrew"
+
+echo_header "Backup and replace .zshrc"
+  zshrcbak="~/.zshrc-$( date '+%C%m%d-%H%M%S' )"
+  mv ~/.zshrc ${zshrcbak}
+  cp ~/workspace/log-cache-dotfiles/config/zshrc ~/.zshrc
+echo_footer ".zshrc backed up to ${zshrcbak} and updated"
 
 ./shared-os-install.sh

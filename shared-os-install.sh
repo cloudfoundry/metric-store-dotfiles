@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 . ~/workspace/log-cache-dotfiles/support/helpers.sh
 
 # pull down plug.vim so we can manage all our other vim plugins
@@ -14,6 +12,7 @@ echo_header "Installing fonts"
 # Refresh the font cache
 sudo fc-cache -fv
 
+echo_header "you may be prompted by a sudo password now"
 git clone https://github.com/powerline/fonts.git --depth=1
 pushd fonts
   ./install.sh
