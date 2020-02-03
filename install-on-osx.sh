@@ -78,9 +78,9 @@ pip3 install --upgrade pynvim
 echo_footer "finished Homebrew"
 
 echo_header "Backup and replace .zshrc"
-  zshrcbak="~/.zshrc-$( date '+%C%m%d-%H%M%S' )"
-  mv ~/.zshrc ${zshrcbak}
-  cp ~/workspace/log-cache-dotfiles/config/zshrc ~/.zshrc
+  zshrcbak="${HOME}/.zshrc-$( date '+%C%m%d-%H%M%S' )"
+  mv ${HOME}/.zshrc ${zshrcbak}
+  cp ${HOME}/workspace/log-cache-dotfiles/config/zshrc ${HOME}/.zshrc
 echo_footer ".zshrc backed up to ${zshrcbak} and updated"
 
 ./shared-os-install.sh
