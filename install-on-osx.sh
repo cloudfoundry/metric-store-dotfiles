@@ -77,6 +77,10 @@ pip3 install --upgrade pynvim
 
 echo_footer "finished Homebrew"
 
+echo_header "Install manual packages"
+  ./osx-packages/reconfigure-pipeline.sh
+echo_footer "Finished manual packages"
+
 echo_header "Backup and replace .zshrc"
   zshrcbak="${HOME}/.zshrc-$( date '+%C%m%d-%H%M%S' )"
   mv ${HOME}/.zshrc ${zshrcbak}
