@@ -90,3 +90,7 @@ source $HOME/.aliases
 eval "$(direnv hook zsh)"
 
 source $HOME/.profile
+
+if [[ -a .zshrc_local ]] ; then
+    source .zshrc_local
+fi
