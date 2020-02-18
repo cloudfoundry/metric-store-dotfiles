@@ -38,6 +38,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'sebdah/vim-delve'
 Plug 'previm/previm'               " preview for markdown, mermaid, etc.
 Plug 'majutsushi/tagbar'
+Plug 'wesleyche/SrcExpl'
 
 Plug 'sjl/gundo.vim'
 
@@ -120,6 +121,21 @@ map \| :NERDTreeFind<CR>
 " tagbar config
 "-----------------------------------------------------------------------------
 nmap <C-g> :TagbarOpenAutoClose<CR>
+
+"-----------------------------------------------------------------------------
+" source explorer config
+"-----------------------------------------------------------------------------
+nmap <F8> :SrcExplToggle<CR>
+let g:SrcExpl_winHeight = 5
+let g:SrcExpl_refreshTime = 100
+let g:SrcExpl_jumpKey = "<ENTER>"
+let g:SrcExpl_pluginList = [
+        \ "__Tagbar__.1",
+        \ "_NERD_tree_",
+        \ "ControlP",
+        \ "Source_Explorer"
+    \ ]
+
 
 "-----------------------------------------------------------------------------
 " ALE config
