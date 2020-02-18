@@ -41,6 +41,7 @@ brew "ripgrep"
 brew "rust"
 brew "terraform"
 brew "ruby-install"
+brew "ctags"
 
 tap "git-duet/tap"
 brew "git-duet"
