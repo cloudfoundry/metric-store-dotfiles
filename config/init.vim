@@ -37,6 +37,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'sebdah/vim-delve'
 Plug 'previm/previm'               " preview for markdown, mermaid, etc.
+Plug 'majutsushi/tagbar'
 
 Plug 'sjl/gundo.vim'
 
@@ -114,6 +115,11 @@ let g:ctrlp_working_path_mode = ''
 map <C-n> :NERDTreeToggle<CR>
 map \ :NERDTreeToggle<CR>
 map \| :NERDTreeFind<CR>
+
+"-----------------------------------------------------------------------------
+" tagbar config
+"-----------------------------------------------------------------------------
+nmap <C-g> :TagbarOpenAutoClose<CR>
 
 "-----------------------------------------------------------------------------
 " ALE config
