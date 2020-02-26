@@ -10,7 +10,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 echo_header "Installing fonts"
 
 # Refresh the font cache
-sudo fc-cache -fv
+sudo fc-cache -fv >/dev/null
 
 echo_header "you may be prompted by a sudo password now"
 git clone https://github.com/powerline/fonts.git --depth=1

@@ -46,7 +46,7 @@ echo_installing() {
 }
 
 echo_already_installed() {
-  echo_error "looks like ${APP} ${VERSION} is already installed, skipping!"
+  echo_normal "looks like ${APP} ${VERSION} is already installed, skipping!\n"
 }
 
 echo_installed() {
@@ -79,4 +79,12 @@ start_install() {
 end_install() {
     set +x
     echo_installed
+}
+
+pushd() {
+  command pushd >/dev/null "$1"
+}
+
+popd() {
+  command popd >/dev/null
 }
