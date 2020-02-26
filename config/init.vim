@@ -132,6 +132,7 @@ let g:SrcExpl_jumpKey = "<ENTER>"
 let g:SrcExpl_pluginList = [
         \ "__Tagbar__.1",
         \ "_NERD_tree_",
+        \ "NERD_tree_1",
         \ "ControlP",
         \ "Source_Explorer"
     \ ]
