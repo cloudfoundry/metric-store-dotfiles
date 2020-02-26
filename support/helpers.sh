@@ -2,7 +2,6 @@ DULL=0
 BRIGHT=1
 FG_RED=31
 FG_GREEN=32
-FG_YELLOW=33
 FG_WHITE=37
 BG_NULL=00
 
@@ -12,19 +11,18 @@ BG_NULL=00
 ESC="\033"
 RESET="$ESC[${DULL};${FG_WHITE};${BG_NULL}m"
 GREEN="$ESC[${DULL};${FG_GREEN}m"
-YELLOW="$ESC[${DULL};${FG_YELLOW}m"
 BRIGHT_RED="$ESC[${BRIGHT};${FG_RED}m"
 
 echo_red() {
-  printf "\n${YELLOW}lc> ${BRIGHT_RED}%b${RESET}" "$1"
+  printf "\n${BRIGHT_RED}%b${RESET}" "$1"
 }
 
 echo_green() {
-  printf "\n${YELLOW}lc> ${GREEN}%b${RESET}" "$1"
+  printf "\n${GREEN}%b${RESET}" "$1"
 }
 
 echo_normal() {
-  printf "\n${YELLOW}lc> %b${RESET}" "$1"
+  printf "\n%b${RESET}" "$1"
 }
 
 echo_header() {

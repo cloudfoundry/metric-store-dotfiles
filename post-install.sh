@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 echo_header "Installing Ruby"
   ruby-install --no-reinstall ruby-2.6.2
@@ -19,4 +19,4 @@ echo_header "Installing pynvim"
   pip3 install --user --upgrade pynvim
 echo_footer "pynvim installed"
 
-~/workspace/log-cache-dotfiles/post-install-office.sh
+~/workspace/metric-store-dotfiles/post-install-office.sh

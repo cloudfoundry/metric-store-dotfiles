@@ -1,4 +1,4 @@
-# log-cache-dotfiles
+# metric-store-dotfiles
 
 ## Getting Started
 

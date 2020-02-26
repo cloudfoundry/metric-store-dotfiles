@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 HOSTNAME=$(hostname)
 OFFICE_HOSTNAMES=(jackal mcnamara)
@@ -33,7 +33,7 @@ echo_header "Installing slack-ip cron job"
   cron_file=/etc/cron.hourly/slack-ip
 
   sudo rm ${cron_file}
-  cat ~/workspace/log-cache-dotfiles/templates/slack-ip.sh | sed -r 's/^(.*)SLACK_URL_PLACEHOLDER(.*)$/echo "\1${SLACK_URL}\2"/e' > /tmp/slack-cron
+  cat ~/workspace/metric-store-dotfiles/templates/slack-ip.sh | sed -r 's/^(.*)SLACK_URL_PLACEHOLDER(.*)$/echo "\1${SLACK_URL}\2"/e' > /tmp/slack-cron
   sudo mv /tmp/slack-cron ${cron_file}
   sudo chmod 0755 ${cron_file}
 echo_footer "slack-ip cron job installed"

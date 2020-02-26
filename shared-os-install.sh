@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 # pull down plug.vim so we can manage all our other vim plugins
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -26,7 +26,7 @@ if [[ `fly -t cf-denver status` != "logged in successfully" ]]; then
 fi
 echo_footer "fly tested"
 
-SRC=$HOME/workspace/log-cache-dotfiles/config
+SRC=$HOME/workspace/metric-store-dotfiles/config
 
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/alacritty
@@ -55,7 +55,7 @@ echo_header "Install zsh"
 if [ ! -f $HOME/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
-ln -sf ~/workspace/log-cache-dotfiles/assets/agnoster-duet.zsh-theme $HOME/.oh-my-zsh/themes
+ln -sf ~/workspace/metric-store-dotfiles/assets/agnoster-duet.zsh-theme $HOME/.oh-my-zsh/themes
 rcup -fv -d config zshrc
 echo_footer "zsh installed"
 

@@ -274,7 +274,7 @@ endfunction
 "-----------------------------------------------------------------------------
 " Snippets
 "-----------------------------------------------------------------------------
-let g:neosnippet#snippets_directory='~/workspace/log-cache-dotfiles/config/snippets'
+let g:neosnippet#snippets_directory='~/workspace/metric-store-dotfiles/config/snippets'
 
 
 "-----------------------------------------------------------------------------

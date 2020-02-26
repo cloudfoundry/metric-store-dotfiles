@@ -2,7 +2,7 @@
 
 set -ex
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 echo_header "apt-get"
 

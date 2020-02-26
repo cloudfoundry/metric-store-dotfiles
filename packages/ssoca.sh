@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 identify_package "ssoca" 0.18.1
 SHASUM="379b1adcade7124cdbefa8d0e26337f33a3ec1e8e35ffb194a5c2ab3d94b5f3b"

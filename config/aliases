@@ -19,7 +19,7 @@ alias flyd='fly -t cf-denver'
 alias flyp='fly -t pws'
 
 # projects
-alias dotfiles="cd ~/workspace/log-cache-dotfiles; tmux_try_rename 'dotfiles'"
+alias dotfiles="cd ~/workspace/metric-store-dotfiles; tmux_try_rename 'dotfiles'"
 alias lcd="cd ~/workspace/metric-store-deployments; tmux_try_rename 'msd'"
 alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
 alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
@@ -47,7 +47,7 @@ alias mvim='nvim'
 alias pbcopy='DISPLAY=:1 xclip -selection c'
 
 # tools
-alias run_msats='~/workspace/log-cache-dotfiles/tools/run-oss-msats-against-yuzu.sh'
+alias run_msats='~/workspace/metric-store-dotfiles/tools/run-oss-msats-against-yuzu.sh'
 
 # Makes ./ work to reference the current package, e.g.,
 # `gomvpkg -from ./foo -to ./bar`

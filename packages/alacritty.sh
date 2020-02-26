@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 identify_package "Alacritty" 0.3.0
 
@@ -23,6 +23,6 @@ start_install
   rm Alacritty-v${VERSION}-ubuntu_18_04-x86_64.tar.gz
   sudo mv alacritty /usr/local/bin
   sudo chmod +x /usr/local/bin/alacritty
-  sudo desktop-file-install /home/pivotal/workspace/log-cache-dotfiles/assets/alacritty.desktop
+  sudo desktop-file-install /home/pivotal/workspace/metric-store-dotfiles/assets/alacritty.desktop
   sudo update-desktop-database
 end_install

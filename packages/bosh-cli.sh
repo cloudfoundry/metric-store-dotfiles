@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 identify_package "bosh" 5.4.0
 FILE=bosh-cli-$VERSION-linux-amd64

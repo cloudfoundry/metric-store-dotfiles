@@ -2,7 +2,7 @@
 Type=Application
 TryExec=alacritty
 Exec=alacritty
-Icon=/home/pivotal/workspace/log-cache-dotfiles/assets/icons/alacritty.png
+Icon=/home/pivotal/workspace/metric-store-dotfiles/assets/icons/alacritty.png
 Terminal=false
 Categories=System;TerminalEmulator;
 

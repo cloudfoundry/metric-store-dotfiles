@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 identify_package "protobuf" 3.6.1
 FILE=protoc-$VERSION-linux-x86_64.zip

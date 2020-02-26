@@ -1,4 +1,4 @@
-cloudfoundry/log-cache-dotfiles
+cloudfoundry/metric-store-dotfiles
 cloudfoundry/loggregator-release
 cloudfoundry/go-loggregator
 cloudfoundry/metric-store-deployments

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 echo_header "Homebrew 🍺"
 
@@ -85,7 +85,7 @@ echo_footer "Finished manual packages"
 echo_header "Backup and replace .zshrc"
   zshrcbak="${HOME}/.zshrc-$( date '+%C%m%d-%H%M%S' )"
   mv ${HOME}/.zshrc ${zshrcbak}
-  cp ${HOME}/workspace/log-cache-dotfiles/config/zshrc ${HOME}/.zshrc
+  cp ${HOME}/workspace/metric-store-dotfiles/config/zshrc ${HOME}/.zshrc
 echo_footer ".zshrc backed up to ${zshrcbak} and updated"
 
 ./shared-os-install.sh

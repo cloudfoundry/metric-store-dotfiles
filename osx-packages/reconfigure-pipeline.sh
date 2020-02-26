@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ~/workspace/log-cache-dotfiles/support/helpers.sh
+. ~/workspace/metric-store-dotfiles/support/helpers.sh
 
 identify_package "reconfigure-pipeline" 0.28.0
 
