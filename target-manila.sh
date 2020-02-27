@@ -20,3 +20,4 @@ export PKS_PASSWORD=$(jq .pks_api.uaa_admin_password -r  ${ENV_FILE} )
 export PKS_TARGET=$(jq .pks_api.url  -r  ${ENV_FILE} )
 
 pks login -a $PKS_TARGET -u $PKS_USERNAME -p $PKS_PASSWORD -k
+pks get-credentials manila-pks-cluster-1
