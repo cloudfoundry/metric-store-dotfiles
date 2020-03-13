@@ -1,4 +1,6 @@
 {
+    // This should exist in settings.json
+    // This file can be accessed through the command palette -> Preferences: Open Settings (JSON)
     "editor.minimap.enabled": false,
     "editor.fontSize": 12,
     "editor.renderWhitespace": "selection",
