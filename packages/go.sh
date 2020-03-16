@@ -2,7 +2,7 @@
 
 . ~/workspace/metric-store-dotfiles/support/helpers.sh
 
-identify_package "go" 1.13.3
+identify_package "go" 1.13.8
 
 if [[ `go version` = "go version go$VERSION "* ]]; then
     echo_already_installed
