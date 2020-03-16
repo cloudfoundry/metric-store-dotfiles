@@ -2,7 +2,7 @@
 
 . ~/workspace/metric-store-dotfiles/support/helpers.sh
 
-identify_package "Alacritty" 0.3.0
+identify_package "Alacritty" 0.4.1
 
 /bin/ps -auxw | /bin/grep " alacritty" | grep -q -v grep
 is_alacritty_running=$?
