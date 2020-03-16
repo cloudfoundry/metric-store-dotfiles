@@ -2,7 +2,7 @@
 
 . ~/workspace/metric-store-dotfiles/support/helpers.sh
 
-identify_package "ripgrep" 0.10.0
+identify_package "ripgrep" 12.0.0
 
 if [[ `rg --version | head -n1` == "ripgrep $VERSION"* ]]; then
     echo_already_installed
@@ -13,8 +13,8 @@ start_install
   pushd $HOME/workspace
     mkdir ripgrep
     pushd ripgrep
-      wget https://github.com/BurntSushi/ripgrep/archive/$VERSION.zip
-      unzip $VERSION.zip
+      wget https://github.com/BurntSushi/ripgrep/archive/$VERSION.tar.gz
+      tar -xvf $VERSION.tar.gz
       cd ripgrep-$VERSION
       cargo build --release
       sudo mv target/release/rg /usr/local/bin
