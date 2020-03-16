@@ -24,6 +24,10 @@
     // Golang settings
     // ---------------
     // Requires the vscode golang plugin to be installed
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
     "go.useLanguageServer": true,
     "go.languageServerExperimentalFeatures": {
         "format": true,
