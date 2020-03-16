@@ -2,10 +2,10 @@
 
 . ~/workspace/metric-store-dotfiles/support/helpers.sh
 
-identify_package "LastPass CLI" 1.3.2
+identify_package "LastPass CLI" 1.3.3
 FILE=lastpass-cli-$VERSION.tar.gz
 
-if [[ `lpass --version` = "LastPass CLI v$VERSION" ]]; then
+if [[ `lpass --version` = "LastPass CLI v$VERSION.GIT" ]]; then
     echo_already_installed
     exit
 fi
