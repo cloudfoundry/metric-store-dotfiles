@@ -50,6 +50,7 @@ fi
 
 # tools
 alias run_msats='~/workspace/metric-store-dotfiles/tools/run-oss-msats-against-yuzu.sh'
+alias curlz='curl -H "Authorization: $(cf oauth-token) -k'
 
 # Makes ./ work to reference the current package, e.g.,
 # `gomvpkg -from ./foo -to ./bar`
