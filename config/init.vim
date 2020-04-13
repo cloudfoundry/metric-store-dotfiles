@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'      " Show changed hunks
 Plug 'kana/vim-textobj-user'       " Dependency for the following textobj plugins
 Plug 'pianohacker/vim-textobj-variable-segment' " Change parts of a variable name
 Plug 'pianohacker/vim-indented-paragraph' " Change a single indented paragraph
+Plug 'michaeljsmith/vim-indent-object' " Indented blocks as text objects
 Plug 'tpope/vim-repeat'            " properly repeat plugin commands
 Plug 'w0rp/ale'                    " asynchronous linting
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
