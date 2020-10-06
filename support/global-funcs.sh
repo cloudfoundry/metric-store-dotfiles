@@ -18,54 +18,7 @@ msq() {
     fi
 }
 
-tmux_get_window_name() {
-    if [ -v TMUX ]; then
-        tmux display-message -p "#W"
-    fi
-}
-
-tmux_set_window_name_from_panes() {
-    if [ -v TMUX ]; then
-        window_name=$(tmux list-panes -F "#T" | paste -s -d "+")
-        tmux_set_window_name ${window_name}
-    fi
-}
-
-tmux_get_pane_title() {
-    if [ -v TMUX ]; then
-        tmux display-message -p "#T"
-    fi
-}
-
-tmux_set_window_name() {
-    local window_name=${1}
-
-    if [ -v TMUX ]; then
-        printf "\033k${window_name}\033\\"
-    fi
-}
-
-tmux_set_pane_title() {
-    local pane_title=${1}
-
-    if [ -v TMUX ]; then
-        printf "\033]2;${pane_title}\033\\"
-    fi
-}
-
-tmux_try_rename() {
-    local pane_title=${1}
-    local current_title=$(tmux_get_pane_title)
-
-    if [[ "${current_title}" != "Bosh Prod" ]]; then
-        tmux_set_pane_title $pane_title
-        tmux_set_window_name_from_panes
-    fi
-}
-
 target_prod() {
-    local current_window_name=$(tmux_get_window_name)
-
     cat > /tmp/director_ca.crt <<EOF
 -----BEGIN CERTIFICATE-----
 MIIDtzCCAp+gAwIBAgIJAPCHksVa5MwFMA0GCSqGSIb3DQEBBQUAMEUxCzAJBgNV
@@ -97,24 +50,21 @@ EOF
     ssoca -e pws-prod auth login
     ssoca -e pws-prod openvpn exec --sudo --static-certificate >/tmp/ssoca.log 2>&1 &
     SSOCA_PID=$!
-    trap "cleanup_prod ${SSOCA_PID} ${current_window_name}" EXIT
+    trap "cleanup_prod ${SSOCA_PID}" EXIT
 
     echo "This might take a second while the VPN gets established..."
     bosh alias-env prod -e 10.10.0.7 --ca-cert /tmp/director_ca.crt
     bosh -e prod login
     export BOSH_ENVIRONMENT=prod
 
-    tmux_set_window_name "Bosh Prod"
     zsh
 }
 
 cleanup_prod() {
     local ssoca_pid=${1}
-    local previous_window_name=${2}
 
     kill ${ssoca_pid}
     ssoca -e pws-prod auth logout
     unset BOSH_ENVIRONMENT
     rm /tmp/director_ca.crt
-    tmux_set_window_name ${previous_window_name}
 }

@@ -19,16 +19,16 @@ alias flyd='fly -t cf-denver'
 alias flyp='fly -t pws'
 
 # projects
-alias dotfiles="cd ~/workspace/metric-store-dotfiles; tmux_try_rename 'dotfiles'"
-alias lcd="cd ~/workspace/metric-store-deployments; tmux_try_rename 'msd'"
-alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
+alias dotfiles="cd ~/workspace/metric-store-dotfiles"
+alias lcd="cd ~/workspace/metric-store-deployments"
+alias cfd="cd ~/workspace/cf-deployment"
 
-alias msr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'ms'"
-alias ci="cd ~/workspace/metric-store-ci; tmux_try_rename 'CI'"
-alias msd="cd ~/workspace/metric-store-deployments; tmux_try_rename 'msd'"
+alias msr="cd ~/workspace/oss/metric-store-release"
+alias ci="cd ~/workspace/metric-store-ci"
+alias msd="cd ~/workspace/metric-store-deployments"
 
-alias docs="cd ~/workspace/docs-metric-store; tmux_try_rename 'docs'"
-alias book="cd ~/workspace/docs-book-metric-store; tmux_try_rename 'book'"
+alias docs="cd ~/workspace/docs-metric-store"
+alias book="cd ~/workspace/docs-book-metric-store"
 
 # quick logins
 alias login='./cf_login'
