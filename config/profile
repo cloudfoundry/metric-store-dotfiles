@@ -13,10 +13,7 @@ export GIT_EDITOR=$VISUAL
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$HOME/bin:$HOME/.bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin:$GOPATH/bin
 
-test -f $HOME/.cargo/env && source $HOME/.cargo/env
 test -f /usr/local/share/chruby/chruby.sh && source /usr/local/share/chruby/chruby.sh
 test -f /usr/local/share/chruby/auto.sh && source /usr/local/share/chruby/auto.sh
 
 source $HOME/workspace/denver-bash-it/custom/environment-targeting.bash
-
-test -d $HOME/.cargo/bin && export PATH="$HOME/.cargo/bin:$PATH"

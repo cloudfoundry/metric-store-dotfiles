@@ -29,12 +29,10 @@ echo_footer "fly tested"
 SRC=$HOME/workspace/metric-store-dotfiles/config
 
 mkdir -p $HOME/.config/nvim
-mkdir -p $HOME/.config/alacritty
 
 echo_header "link dotfiles"
 ln -sf $SRC/init.vim $HOME/.config/nvim/init.vim
-ln -sf $SRC/alacritty.yml $HOME/.config/alacritty/alacritty.yml
-rcup -fv -x gitconfig -x zshrc -x bash_darwin -x init.vim -x alacritty.yml -d config
+rcup -fv -x gitconfig -x zshrc -x bash_darwin -x init.vim -d config
 echo_footer "dotfiles linked"
 
 echo_header "post install"
