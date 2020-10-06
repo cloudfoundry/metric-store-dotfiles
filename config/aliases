@@ -22,14 +22,9 @@ alias flyp='fly -t pws'
 alias dotfiles="cd ~/workspace/metric-store-dotfiles; tmux_try_rename 'dotfiles'"
 alias lcd="cd ~/workspace/metric-store-deployments; tmux_try_rename 'msd'"
 alias cfd="cd ~/workspace/cf-deployment; tmux_try_rename 'cfd'"
-alias cats="cd ~/workspace/go/src/github.com/cloudfoundry/cf-acceptance-tests; tmux_try_rename 'cats'"
 
 alias msr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'ms'"
-alias ms="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'ms'"
-alias osmr="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'ms'"
-alias osm="cd ~/workspace/oss/metric-store-release; tmux_try_rename 'ms'"
 alias ci="cd ~/workspace/metric-store-ci; tmux_try_rename 'CI'"
-alias mci="cd ~/workspace/metric-store-ci; tmux_try_rename 'CI'"
 alias msd="cd ~/workspace/metric-store-deployments; tmux_try_rename 'msd'"
 
 alias docs="cd ~/workspace/docs-metric-store; tmux_try_rename 'docs'"
@@ -49,7 +44,6 @@ if ! which pbcopy >/dev/null; then
 fi
 
 # tools
-alias run_msats='~/workspace/metric-store-dotfiles/tools/run-oss-msats-against-yuzu.sh'
 alias curlz='curl -H "Authorization: $(cf oauth-token)" -k'
 
 # Makes ./ work to reference the current package, e.g.,

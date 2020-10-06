@@ -18,5 +18,3 @@ echo_footer "yq installed"
 echo_header "Installing pynvim"
   pip3 install --user --upgrade pynvim
 echo_footer "pynvim installed"
-
-~/workspace/metric-store-dotfiles/post-install-office.sh
