@@ -1,6 +1,7 @@
 authors:
   mg: Mark Gangl; mgangl
+  am: Arsen Martirosyan; arsenm
 email:
-  domain: pivotal.io
+  domain: vmware.com
 
 global: true
